@@ -1,13 +1,33 @@
 name: sync-wiki
 
 on:
-  gollum:
+    push:
+      branches:
+        - master
+    repository_dispatch:
+      types: [docs]
+    gollum:
 
 env:
     GIT_AUTHOR_NAME: quarkusbot
     GIT_AUTHOR_EMAIL: quarkusbot@xam.dk
 
 jobs:
+    job-sync-docs-to-wiki:
+        runs-on: ubuntu-latest
+        if: github.event_name != 'gollum'
+        steps:
+          - name: Checkout Repo
+            uses: actions/checkout@v2
+          - name: Sync docs to wiki
+            uses: newrelic/wiki-sync-action@master
+            with:
+              source: docs
+              destination: wiki
+              token: ${{ secrets.WIKI_PAT }}
+              gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
+              gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}
+
     job-sync-wiki-to-docs:
         runs-on: ubuntu-latest
         if: github.event_name == 'gollum'
