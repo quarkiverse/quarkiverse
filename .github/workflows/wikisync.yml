@@ -11,15 +11,15 @@ jobs:
     job-sync-wiki-to-docs:
         runs-on: ubuntu-latest
         if: github.event_name == 'gollum'
-        steps:
+    steps:
         - name: Checkout Repo
-            uses: actions/checkout@v2
-            with:
+          uses: actions/checkout@v2
+          with:
             token: ${{ secrets.WIKI_PAT }} # allows us to push back to repo
             ref: master
         - name: Sync Wiki to Docs
-            uses: newrelic/wiki-sync-action@master
-            with:
+          uses: newrelic/wiki-sync-action@master
+          with:
             source: wiki
             destination: docs
             token: ${{ secrets.WIKI_PAT }}
