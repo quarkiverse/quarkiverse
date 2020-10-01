@@ -26,6 +26,6 @@ The project is expected to be licensed under ASL 2.0. (TO BE CONFIRMED)
 
 # Quarkus Extension Development Guides and References
 
-In case you need help creating a new Quarkus extension Maven project, please follow [this guide](https://quarkus.io/guides/building-my-first-extension).
+In case you need help creating a new Quarkus extension Maven project, please follow [Building My First Extension](https://quarkus.io/guides/building-my-first-extension) guide.
 
 Other useful articles related to Quarkus extension development can be found under the [Writing Extensions](https://quarkus.io/guides/#writing-extensions) guide category on the [Quarkus.io](http://quarkus.io) website.
