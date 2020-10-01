@@ -8,7 +8,6 @@ In the early days and actually up until recently, Quarkus extensions contributed
 
 Projects hosted in the Quarkiverse organization on github should respect the following conventions and policies.
 
-
 ## Repository name
 
 The repository name under the quarkiverse organization should have `quarkiverse-` prefix. This will help avoid potential conflicts when cloning and/or forking the repository.
@@ -24,3 +23,9 @@ The root package name is expected to be the same as the project’s Maven artifa
 ## LICENSE
 
 The project is expected to be licensed under ASL 2.0. (TO BE CONFIRMED)
+
+# Quarkus Extension Development Guides and References
+
+In case you need help creating a new Quarkus extension Maven project, please follow [this guide](https://quarkus.io/guides/building-my-first-extension).
+
+Other useful articles related to Quarkus extension development can be found under the [Writing Extensions](https://quarkus.io/guides/#writing-extensions) guide category on the [Quarkus.io](http://quarkus.io) website.
