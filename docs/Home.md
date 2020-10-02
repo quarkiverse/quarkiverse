@@ -1,10 +1,16 @@
+# Welcome to Quarkiverse!
+
+**NOTE** this content is still a draft - feedback welcome!
+
+Quarkiverse provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
+Quarkus extensions hosted in the Quarkiverse organization will automatically be included into the Quarkus extensions catalog displayed on [code.quarkus.io](http://code.quarkus.io)
+and the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`).
+
 # Why Quarkiverse
 
 In the early days and actually up until recently, Quarkus extensions contributed by the community members (including the core Quarkus team) have been welcome in the Quarkus core repository at https://github.com/quarkusio/quarkus. Today the core repository has grown a lot and it's evident that it simply becomes troublesome to work with it for its contributors. That and other maintenance and infrastructure related issues inspired the creation of a separate organization called Quarkiverse to host Quarkus extension projects contributed by the community (including the Quarkus core team members themselves).
 
 # Joining Quarkiverse
-
-**NOTE** this content is still a draft - feedback welcome!
 
 Projects hosted in the Quarkiverse organization on github should respect the following conventions and policies.
 
