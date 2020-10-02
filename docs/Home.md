@@ -26,6 +26,11 @@ The Maven `groupId` of the project's artifacts should follow the following forma
 
 The root package name is expected to be the same as the project’s Maven artifact `groupId`.
 
+## Parent POM
+
+All Quarkiverse projects are expected to use [io.quarkiverse:quarkiverse-parent](https://github.com/quarkiverse/quarkiverse-parent) as the parent POM.
+This POM contains common project release and artifact publishing configuration.
+
 ## LICENSE
 
 The project is expected to be licensed under ASL 2.0. (TO BE CONFIRMED)
