@@ -1,5 +1,3 @@
-#Release
-
 The release is performed through GitHub Actions. The necessary credentials to tag in GitHub and to push to Maven Central (Sonatype)
 already exists as secrets in the `quarkiverse` organization. 
 
