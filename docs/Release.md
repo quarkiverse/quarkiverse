@@ -1,0 +1,26 @@
+#Release
+
+The release is performed through GitHub Actions. The necessary credentials to tag in GitHub and to push to Maven Central (Sonatype)
+already exists as secrets in the `quarkiverse` organization. 
+
+## Requirements 
+
+- Make sure that the `quarkiversebot` has `write` permissions to the repository. 
+
+## Perform the release 
+
+To perform a release, one must provide a Pull-request changing the `current-version` and `next-version` properties in the `.github/project.yml` file.
+
+Example: 
+```yaml
+name: Quarkiverse Parent
+release:
+  current-version: 2
+  next-version: 3-SNAPSHOT    
+```
+
+Once the pull-request is merged, the `release.yml` workflow is triggered, which will perform a `mvn release:prepare release:perform` to deploy the released version to Sonatype Nexus and push the generated tags once the process is complete. 
+
+**IMPORTANT: The Pull Request needs to come from a branch in the origin repository.** 
+Right now, for security reasons, secrets are not propagated to forks, even for Pull Requests opened to the original repository (https://github.community/t5/GitHub-Actions/Github-Workflow-not-running-from-pull-request-from-forked/m-p/33547/highlight/true#M1555)
+
