@@ -33,7 +33,22 @@ This POM contains common project release and artifact publishing configuration.
 
 ## LICENSE
 
-The project is expected to be licensed under ASL 2.0. (TO BE CONFIRMED)
+The project is expected to be licensed under ASL 2.0.
+
+
+## Contributors
+
+Make sure to add a list of Contributors to your README file. Follow these steps:
+
+1. Open a new issue
+2. After the issue is created, add a new comment in the following format:
+
+```
+@all-contributors add @your_github_id for code and maintenance
+```
+3. Close the issue
+
+This will trigger the @all-contributors bot to provide a pull-request adding yourself as a contributor to the repository. See more details here: https://allcontributors.org/
 
 # Quarkus Extension Development Guides and References
 
