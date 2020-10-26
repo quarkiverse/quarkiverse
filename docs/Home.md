@@ -21,7 +21,7 @@ In the early days and actually up until recently, Quarkus extensions contributed
 
 The advantages to join Quarkiverse are:
 
-  . Automated and secured publishing of your maven releases to Maven Central.
+  . Automated and secured publishing of your Maven releases to Maven Central.
   . Automated Cross-testing of your extension with Quarkus builds/releases (see https://github.com/quarkusio/quarkus-ecosystem-ci)
   . Inclusion in registry used by Quarkus tooling to browse extensions (i.e. code.quarkus, command line and IDE tools).
   . Consistent formatting and release of project
