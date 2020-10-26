@@ -13,7 +13,7 @@ Quarkiverse is our proposed solution to create a "home" for such extensions/proj
 This Quarkiverse GitHub organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
 
 Quarkus extensions hosted in the Quarkiverse organization will by default be included into the Quarkus extensions catalog displayed on [code.quarkus.io](http://code.quarkus.io) and the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). To stay listed only requirement
-is that the extension keeps functioniong, stays uptodate and cause no harm.
+is that the extension keeps functioning, stays up to date and cause no harm.
 
 # Why Quarkiverse
 
