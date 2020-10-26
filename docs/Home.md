@@ -2,7 +2,7 @@
 
 **NOTE** this content is still a draft - feedback welcome!
 
-Quarkus is a Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became to much of overhead or just not always sensisble to include an extension into the core. 
+Quarkus is a Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became to much of overhead or just not always sensible to include an extension into the core. 
 
 Some have since then created their own repositories external to Quarks, but others just never happeend because not everyone wants the overhead of maintaining a build setup while in other cases we actually had an idea for an extension but not solidified enough yet to be included in core.
 
