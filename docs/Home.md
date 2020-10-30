@@ -53,7 +53,7 @@ The Maven `groupId` of the project's artifacts should follow the following forma
 
 ## Root package name
 
-The root package name is expected to be the same as the project’s Maven artifact `groupId`, i.e. `io.quarkiverse.jberet`, if project name is `jberet`.
+The root package name is expected to be the same as the project’s Maven artifact `groupId`, i.e. `io.quarkiverse.jberet`, if the project name is `jberet`.
 
 ## Parent POM
 
