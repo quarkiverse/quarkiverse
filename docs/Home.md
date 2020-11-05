@@ -41,7 +41,7 @@ Projects hosted in the Quarkiverse organization on github should respect the fol
 
 ## Identify Project Maintainer ##
 
-Each project will have a github team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
+Each project will have a GitHub team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
 
 ## Repository name
 
