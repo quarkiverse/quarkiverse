@@ -2,18 +2,18 @@
 
 **NOTE** this content is still a draft - feedback welcome!
 
-Quarkus is a Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became too much of overhead or just not always sensible to include an extension into the core. 
+Quarkus is a Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became to much of overhead or just not always sensisble to include an extension into the core. 
 
-Some have since then created their own repositories external to Quarks, but others just never happened because not everyone wants the overhead of maintaining a build setup while in other cases we actually had an idea for an extension but not solidified enough yet to be included in core.
+Some have since then created their own repositories external to Quarks, but others just never happeend because not everyone wants the overhead of maintaining a build setup while in other cases we actually had an idea for an extension but not solidified enough yet to be included in core.
 
 Quarkiverse is our proposed solution to create a "home" for such extensions/projects.
 
-#What is Quarkiverse
+# What is Quarkiverse
 
-This Quarkiverse GitHub organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
+This Quarkiverse github organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
 
 Quarkus extensions hosted in the Quarkiverse organization will by default be included into the Quarkus extensions catalog displayed on [code.quarkus.io](http://code.quarkus.io) and the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). To stay listed only requirement
-is that the extension keeps functioning, stays up to date and cause no harm.
+is that the extension keeps functioniong, stays uptodate and cause no harm.
 
 # Why Quarkiverse
 
@@ -21,19 +21,19 @@ In the early days and actually up until recently, Quarkus extensions contributed
 
 The advantages to join Quarkiverse are:
 
-  . Automated and secured publishing of your Maven releases to Maven Central.
+  . Automated and secured publishing of your maven releases to Maven Central.
   . Automated Cross-testing of your extension with Quarkus builds/releases (see https://github.com/quarkusio/quarkus-ecosystem-ci)
   . Inclusion in registry used by Quarkus tooling to browse extensions (i.e. code.quarkus, command line and IDE tools).
   . Consistent formatting and release of project
-  . Quarkus team members can help and fix issues if project has build issues.
-  
+  . Quarkus team members can in an emergency (i.e. maintainer are missing) help and fix issues.
+
 Note: While the Quarkus project has the "keys" to publish under `io.quarkiverse`, each project in Quarkiverse is driven and maintained by 
 the lead of that project. They decide what happens with the project - Quarkiverse will just expect releases to be compatible with Quarkus - if a project
-for some reason cannot do a release we can in the best scenario help or in the worst scenario we'll temporarily exclude the project from the registry to avoid
+for some reason cannot do a release we can in the best scenario help or in the worst scenario we'll temporarily exclude the project from the affected registry entries to avoid
 end-users to have a bad experience.
  
 If you do not want to commit to the above guidelnes then you are more than welcome to publish an extension outside of Quarkus or Quarkiverse; and then you can
-still be listed in the registry - it is just not handled automatically. In this case please use your own group ID to clearly identify that those artifacts are from a third-party organization.
+still be listed in the registry - it is just not handled automtically. In this case we do please request you use your own group id to clearly identify those artifacts are from a third-party.
 
 # Joining Quarkiverse
 
@@ -41,11 +41,11 @@ Projects hosted in the Quarkiverse organization on github should respect the fol
 
 ## Identify Project Maintainer ##
 
-Each project will have a GitHub team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
+Each project will have a github team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
 
 ## Repository name
 
-The repository name under the quarkiverse organization should be `quarkiverse-<project-name>`. This will help avoid potential conflicts when cloning and/or forking the repository.
+The repository name under the quarkiverse organization should have `quarkiverse-` prefix. This will help avoid potential conflicts when cloning and/or forking the repository.
 
 ## Project's Maven artifact `groupId`s
 
@@ -53,7 +53,7 @@ The Maven `groupId` of the project's artifacts should follow the following forma
 
 ## Root package name
 
-The root package name is expected to be the same as the project’s Maven artifact `groupId`, i.e. `io.quarkiverse.jberet`, if the project name is `jberet`.
+The root package name is expected to be the same as the project’s Maven artifact `groupId`, i.e. `io.quarkiverse.jberet`, if project name is `jberet`.
 
 ## Parent POM
 
@@ -84,7 +84,10 @@ Make sure to add a list of Contributors to your README file. Follow these steps:
 3. Close the issue
 
 This will trigger the @all-contributors bot to provide a pull-request adding yourself as a contributor to the repository. See more details here: https://allcontributors.org/
-The project is expected to be licensed under ASL 2.0.
+
+1. Close the issue
+
+This will trigger the @all-contributors bot to provide a pull-request adding yourself as a contributor to the repository. See more details here: https://allcontributors.org/
 
 # Quarkus Extension Development Guides and References
 
