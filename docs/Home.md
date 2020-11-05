@@ -85,10 +85,6 @@ Make sure to add a list of Contributors to your README file. Follow these steps:
 
 This will trigger the @all-contributors bot to provide a pull-request adding yourself as a contributor to the repository. See more details here: https://allcontributors.org/
 
-1. Close the issue
-
-This will trigger the @all-contributors bot to provide a pull-request adding yourself as a contributor to the repository. See more details here: https://allcontributors.org/
-
 # Quarkus Extension Development Guides and References
 
 In case you need help creating a new Quarkus extension Maven project, please follow [Building My First Extension](https://quarkus.io/guides/building-my-first-extension) guide.
