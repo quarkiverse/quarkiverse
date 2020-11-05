@@ -33,7 +33,7 @@ for some reason cannot do a release we can in the best scenario help or in the w
 end-users to have a bad experience.
  
 If you do not want to commit to the above guidelnes then you are more than welcome to publish an extension outside of Quarkus or Quarkiverse; and then you can
-still be listed in the registry - it is just not handled automtically. In this case we do please request you use your own group id to clearly identify those artifacts are from a third-party.
+still be listed in the registry - it is just not handled automatically. In this case please use your own group ID to clearly identify that those artifacts are from a third-party organization.
 
 # Joining Quarkiverse
 
