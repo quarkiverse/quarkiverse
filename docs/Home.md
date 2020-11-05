@@ -2,22 +2,22 @@
 
 **NOTE** this content is still a draft - feedback welcome!
 
-Quarkus is a Kubernetes Native Java stack tailored for OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became to much of overhead or just not always sensisble to include an extension into the core. 
+Quarkus is a Kubernetes Native Java stack tailored for the OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became too much of overhead or just not always sensisble to include an extension into the core. 
 
-Some have since then created their own repositories external to Quarks, but others just never happened because not everyone wants the overhead of maintaining a build setup while in other cases we actually had an idea for an extension but not solidified enough yet to be included in core.
+Some have since then created their own repositories external to Quarks, but others just never happened because not everyone wants the overhead of maintaining a build setup while, in other cases, we actually had an idea for an extension but not solidified enough yet to be included in core.
 
 Quarkiverse is our proposed solution to create a "home" for such extensions/projects.
 
 # What is Quarkiverse
 
-This Quarkiverse github organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
+This Quarkiverse GitHub organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
 
-Quarkus extensions hosted in the Quarkiverse organization will by default be included into the Quarkus extensions catalog displayed on [code.quarkus.io](http://code.quarkus.io) and the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). To stay listed only requirement
-is that the extension keeps functioniong, stays uptodate and cause no harm.
+Quarkus extensions hosted in the Quarkiverse organization will by default be included into the Quarkus extensions catalog displayed on [code.quarkus.io](http://code.quarkus.io) and the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). To stay listed, the only requirement
+is that the extension keeps functioning, stays up-to-date and cause no harm.
 
 # Why Quarkiverse
 
-In the early days and actually up until recently, Quarkus extensions contributed by the community members (including the core Quarkus team) have been welcome in the Quarkus core repository at https://github.com/quarkusio/quarkus. Today the core repository has grown a lot and it's evident that it simply becomes troublesome to work with it for its contributors. That and other maintenance and infrastructure related issues inspired the creation of a separate organization called Quarkiverse to host Quarkus extension projects contributed by the community (including the Quarkus core team members themselves).
+In the early days and actually up until recently, Quarkus extensions contributed by the community members (including the core Quarkus team) have been welcomed in the Quarkus core repository at https://github.com/quarkusio/quarkus. Today the core repository has grown a lot and it's evident that it simply becomes troublesome to work with it for its contributors. That and other maintenance and infrastructure related issues inspired the creation of a separate organization called Quarkiverse to host Quarkus extension projects contributed by the community (including the Quarkus core team members themselves).
 
 The advantages to join Quarkiverse are:
 
@@ -29,19 +29,18 @@ The advantages to join Quarkiverse are:
 
 Note: While the Quarkus project has the "keys" to publish under `io.quarkiverse`, each project in Quarkiverse is driven and maintained by 
 the lead of that project. They decide what happens with the project - Quarkiverse will just expect releases to be compatible with Quarkus - if a project
-for some reason cannot do a release we can in the best scenario help or in the worst scenario we'll temporarily exclude the project from the affected registry entries to avoid
-end-users to have a bad experience.
+for some reason cannot do a release we can in the best scenario help or in the worst scenario we'll temporarily exclude the project from the affected registry entries to avoid end-users to have a bad experience.
  
 If you do not want to commit to the above guidelnes then you are more than welcome to publish an extension outside of Quarkus or Quarkiverse; and then you can
-still be listed in the registry - it is just not handled automtically. In this case we do please request you use your own group id to clearly identify those artifacts are from a third-party.
+still be listed in the registry - it is just not handled automatically. In this case we request you to use your own group ID to clearly identify those artifacts are from a third-party organization.
 
 # Joining Quarkiverse
 
-Projects hosted in the Quarkiverse organization on github should respect the following conventions and policies.
+Projects hosted in the Quarkiverse organization on GitHub should respect the following conventions and policies:
 
 ## Identify Project Maintainer ##
 
-Each project will have a github team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
+Each project will have a GitHub team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
 
 ## Repository name
 
