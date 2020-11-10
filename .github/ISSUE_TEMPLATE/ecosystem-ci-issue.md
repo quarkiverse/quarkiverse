@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-This issue will be opened and closed depending on the state of quarkiverse/quarkiverse-<REPO> build against Quarkus master SNAPSHOT.
+This issue will be opened and closed depending on the state of https://github.com/quarkiverse/quarkiverse-<REPO> build against Quarkus master SNAPSHOT.
 
 If you are interested in being notified, please subscribe to the issue.
