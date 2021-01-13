@@ -50,6 +50,10 @@ The repository name under the quarkiverse organization should have `quarkiverse-
 
 The Maven `groupId` of the project's artifacts should follow the following format: `io.quarkiverse.<project-name>`. In other words, the project’s `groupId` should start with the `io.quarkiverse.` prefix followed by the project-specific unique name in which dots aren't allowed.
 
+## Project's Maven artifact `artifactId`s
+
+The project’s `artifactId` should start with the `quarkiverse-` prefix.
+
 ## Root package name
 
 The root package name is expected to be the same as the project’s Maven artifact `groupId`, i.e. `io.quarkiverse.jberet`, if project name is `jberet`.
