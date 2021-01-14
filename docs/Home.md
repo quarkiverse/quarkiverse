@@ -2,9 +2,9 @@
 
 **NOTE** this content is still a draft - feedback welcome!
 
-Quarkus is a Kubernetes Native Java stack tailored for the OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, and it is also a ecosystem of ever growing extensions. In the beginning we were adding all extensions to the core Quarkus repository but eventually it became too much of overhead or just not always sensisble to include an extension into the core. 
+Quarkus is a Kubernetes Native Java stack tailored for the OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, as well as an ever growing ecosystem of its extensions. At the beginning we were accepting all the contributed extensions in the core Quarkus repository. Eventually though it grew too large and lead to a maintenance overhead. In addition to that, in some cases it's simply not always sensible to include an extension into the core Quarkus repository.
 
-Some have since then created their own repositories external to Quarks, but others just never happened because not everyone wants the overhead of maintaining a build setup while, in other cases, we actually had an idea for an extension but not solidified enough yet to be included in core.
+Some have since then created their own repositories external to Quarkus, but others just never happened because not everyone wants the overhead of maintaining a build setup. Even the Quarkus core developers sometimes had ideas for an extension but not solid enough to be included in the Quarkus core repository.
 
 Quarkiverse is our proposed solution to create a "home" for such extensions/projects.
 
@@ -33,6 +33,12 @@ for some reason cannot do a release we can in the best scenario help or in the w
  
 If you do not want to commit to the above guidelnes then you are more than welcome to publish an extension outside of Quarkus or Quarkiverse; and then you can
 still be listed in the registry - it is just not handled automatically. In this case we request you to use your own group ID to clearly identify those artifacts are from a third-party organization.
+
+# Quarkiverse and Quarkus Platform
+
+The word Quarkiverse, derived from "Quarkus" and "universe", is carrying the meaning of the universe of Quarkus extensions. In other words, it is intended to represent a part of the Quarkus ecosystem. However, at the same time, there is also a notion of a Quarkus platform. There is a significant difference between the two.
+
+While the extensions under the Quarkiverse organization are generally independent projects lead by independent development teams, the fundamental promise of a Quarkus platform is any combination of the Quarkus extensions the platform consists of can be used in the same application without causing any conflict for each other. Quarkus platform implies coordination, cross testing and dependency version alignment across extensions that constitute the platform which is not generally applicable to the Quarkiverse extensions. It is, however, still possible for extensions hosted in the Quarkiverse to join a Quarkus platform assuming they satisfy the purpose and policies defined for that platform.
 
 # Joining Quarkiverse
 
