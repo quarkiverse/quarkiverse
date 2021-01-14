@@ -58,7 +58,7 @@ The Maven `groupId` of the project's artifacts should follow the following forma
 
 ## Project's Maven artifact `artifactId`s
 
-The project’s `artifactId` should NOT start with `quarkus-`, recommendation is to use it as a prefix, i.e. `-quarkus` suffix.
+The project’s `artifactId` should start with the `quarkiverse-` prefix.
 
 ## Root package name
 
