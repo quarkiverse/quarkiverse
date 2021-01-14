@@ -1,10 +1,6 @@
 The release is performed through GitHub Actions. The necessary credentials to tag in GitHub and to push to Maven Central (Sonatype)
 already exists as secrets in the `quarkiverse` organization. 
 
-## Requirements 
-
-- Make sure that the `quarkiversebot` has `write` permissions to the repository. 
-
 ## Perform the release 
 
 To perform a release, one must provide a Pull-request changing the `current-version` and `next-version` properties in the `.github/project.yml` file.
