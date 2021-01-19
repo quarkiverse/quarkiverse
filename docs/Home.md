@@ -50,7 +50,7 @@ Each project will have a GitHub team, and in here at least one must be listed an
 
 ## Repository name
 
-The repository name under the quarkiverse organization should have `quarkiverse-` prefix. This will help avoid potential conflicts when cloning and/or forking the repository.
+The repository name under the quarkiverse organization should have `quarkus-` prefix. This will help avoid potential conflicts when cloning and/or forking the repository.
 
 ## Project's Maven artifact `groupId`s
 
@@ -58,7 +58,7 @@ The Maven `groupId` of the project's artifacts should follow the following forma
 
 ## Project's Maven artifact `artifactId`s
 
-The project’s `artifactId` should start with the `quarkiverse-` prefix.
+The project’s `artifactId` should start with the `quarkus-` prefix.
 
 ## Root package name
 
