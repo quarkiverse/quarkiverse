@@ -13,6 +13,9 @@ release:
   next-version: 3-SNAPSHOT    
 ```
 
+* current-version: The released version
+* next-version: The next development version
+
 Once the pull-request is merged, the `release.yml` workflow is triggered, which will perform a `mvn release:prepare release:perform` to deploy the released version to Sonatype Nexus and push the generated tags once the process is complete. 
 
 **IMPORTANT: The Pull Request needs to come from a branch in the origin repository.** 
