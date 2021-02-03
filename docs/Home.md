@@ -31,7 +31,7 @@ Note: While the Quarkus project has the "keys" to publish under `io.quarkiverse`
 the lead of that project. They decide what happens with the project - Quarkiverse will just expect releases to be compatible with Quarkus - if a project
 for some reason cannot do a release we can in the best scenario help or in the worst scenario we'll temporarily exclude the project from the affected registry entries to avoid end-users to have a bad experience.
  
-If you do not want to commit to the above guidelnes then you are more than welcome to publish an extension outside of Quarkus or Quarkiverse; and then you can
+If you do not want to commit to the above guidelines then you are more than welcome to publish an extension outside of Quarkus or Quarkiverse; and then you can
 still be listed in the registry - it is just not handled automatically. In this case we request you to use your own group ID to clearly identify those artifacts are from a third-party organization.
 
 # Quarkiverse and Quarkus Platform
