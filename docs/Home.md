@@ -42,6 +42,8 @@ While the extensions under the Quarkiverse organization are generally independen
 
 # Joining Quarkiverse
 
+The first step is to create an **Extension Proposal** ticket in the [Quarkus issue tracker](https://github.com/quarkusio/quarkus/issues) (make sure to check first if the extension you’re proposing is not created yet) and let us know if you are interested in leading the development of this extension by commenting on the issue. The Quarkus team will review and discuss if the proposal extension should belong to core or live in the Quarkiverse Hub.
+
 Projects hosted in the Quarkiverse organization on GitHub should respect the following conventions and policies:
 
 ## Identify Project Maintainer ##
