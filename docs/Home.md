@@ -82,6 +82,11 @@ Mechanism is To be defined, but something like having a script that will take qu
 
 The project is expected to be licensed under ASL 2.0.
 
+## Code format
+
+Extensions generated with the `create-extension` goal of the Quarkus maven plugin expect code to be formatted according to the Quarkus conventions as documented in: https://github.com/quarkusio/quarkus/blob/master/CONTRIBUTING.md#ide-config-and-code-style. The default CI setup will validate the format and fail your build if the files don't conform.
+
+
 ## Contributors
 
 Make sure to add a list of Contributors to your README file. Follow these steps:
