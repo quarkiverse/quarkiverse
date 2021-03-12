@@ -3,7 +3,7 @@ name: sync-wiki
 on:
     push:
       branches:
-        - master
+        - main
     repository_dispatch:
       types: [docs]
     gollum:
@@ -36,7 +36,7 @@ jobs:
               uses: actions/checkout@v2
               with:
                 token: ${{ secrets.WIKI_PAT }} # allows us to push back to repo
-                ref: master
+                ref: main
             - name: Sync Wiki to Docs
               uses: newrelic/wiki-sync-action@master
               with:
