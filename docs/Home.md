@@ -43,9 +43,18 @@ While the extensions under the Quarkiverse organization are generally independen
 
 # Joining Quarkiverse
 
-The first step is to create an **Extension Proposal** ticket in the [Quarkus issue tracker](https://github.com/quarkusio/quarkus/issues) (make sure to check first if the extension you’re proposing is not created yet) and let us know if you are interested in leading the development of this extension by commenting on the issue. The Quarkus team will review and discuss if the proposal extension should belong to core or live in the Quarkiverse Hub.
+## Getting an extension onboarded:
 
-Projects hosted in the Quarkiverse organization on GitHub should respect the following conventions and policies:
+1. The first step is to create or pick an **Extension Proposal** ticket in the [Quarkus issue tracker](https://github.com/quarkusio/quarkus/issues) and let us know if you are interested in leading the development of this extension by commenting on the issue. The Quarkus team will review and discuss with you and community if the proposal extension should belong to core or live in the Quarkiverse Hub.
+2. When decided, the Quarkiverse Team will initialize the repository in the Quarkiverse organization for you with skeleton code ready. Until then, if not already done, you can start implementing your extension from a skeleton with this command:
+```shell
+mvn io.quarkus:quarkus-maven-plugin:create-extension \
+ -DgroupId=io.quarkiverse.[myext] -DextensionId=[my-ext] -U
+```
+3. Follow instructions in [Quarkus Ecosystem-CI](https://github.com/quarkusio/quarkus-ecosystem-ci) to enable the extension to take part in overall testing.
+4. Announce on [quarkus-dev mailing list](https://groups.google.com/g/quarkus-dev) with the repo location, maintainer(s) and a description/context.
+
+The Quarkiverse team will provide the repository ready for development, nevertheless, it is always good to know that we respect the following conventions and policies. 
 
 ## Identify Project Maintainer ##
 
