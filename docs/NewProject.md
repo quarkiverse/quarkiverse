@@ -1,8 +1,7 @@
-# Quarkiverse Team New Project Steps
+# New Quarkiverse Project Steps
 
-This is still a work in progress.
-
-These are the steps to be followed by Quarkiverse owners when onboarding a new project
+> :warning: **These are the steps to be followed by Quarkiverse owners when onboarding a new project. Those instructions are meant for the Quarkiverse team when there is a new Quarkiverse extension project request by contributors/maintainers.**
+> **We also provide instructions to get an [extension onboarded](https://github.com/quarkiverse/quarkiverse/wiki#getting-an-extension-onboarded) in the Quarkiverse for contributors/maintainers.**
 
 Considering the following extension to create:
 ```yaml
