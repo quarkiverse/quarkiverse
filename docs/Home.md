@@ -96,6 +96,9 @@ The project is expected to be licensed under ASL 2.0.
 
 Extensions generated with the `create-extension` goal of the Quarkus maven plugin expect code to be formatted according to the Quarkus conventions as documented in: https://github.com/quarkusio/quarkus/blob/master/CONTRIBUTING.md#ide-config-and-code-style. The default CI setup will validate the format and fail your build if the files don't conform.
 
+## Discussions 
+
+Because we want to centralize discussions in common places so developers including core committers can contribute, GitHub Discussions are disabled in Quarkiverse extension repositories. Development questions should be addressed in the [Mailing List](https://groups.google.com/g/quarkus-dev) and user questions in [Stack Overflow](https://stackoverflow.com/questions/tagged/quarkus)
 
 ## Contributors
 
