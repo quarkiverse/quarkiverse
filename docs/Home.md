@@ -98,9 +98,11 @@ Extensions generated with the `create-extension` goal of the Quarkus maven plugi
 
 ## Discussions 
 
-Because we want to centralize discussions in common places so developers including core committers can contribute, GitHub Discussions are disabled in Quarkiverse extension repositories. Development questions should be addressed in the [Mailing List](https://groups.google.com/g/quarkus-dev) and user questions in [Stack Overflow](https://stackoverflow.com/questions/tagged/quarkus).
+To avoid spreading information too much and make it hard to figure out where to post we have following default guidelines:
 
-However we can enable it in the repository if the extension maintainer really wants it (open an issue requesting that and ping the `@quarkiverse/quarkiverse-owners` team in the issue). However be aware that Core developers will only be aware of these discussions only if they are explicitly mentioned.
+Development questions should be addressed in the [Mailing List](https://groups.google.com/g/quarkus-dev) and user questions in [Stack Overflow](https://stackoverflow.com/questions/tagged/quarkus) + the quarkiverse project tag.
+
+However we can enable it in the repository if the extension maintainer really wants it (open an issue requesting that and ping the `@quarkiverse/quarkiverse-owners` team in the issue). However be aware that Core developers will not follow or be aware of these discussions unless explicitly mentioned.
 
 
 ## Contributors
