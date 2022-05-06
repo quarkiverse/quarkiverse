@@ -1,12 +1,15 @@
 name: sync-wiki
 
+
 on:
-    push:
-      branches:
-        - main
-    repository_dispatch:
-      types: [docs]
-    gollum:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+  repository_dispatch:
+    types: [docs]
+  gollum:
 
 env:
     GIT_AUTHOR_NAME: quarkusbot
