@@ -40,6 +40,8 @@ jobs:
               with:
                 token: ${{ secrets.WIKI_PAT }} # allows us to push back to repo
                 ref: main
+            - name: Add /github/workspace as safe directory
+              run: sudo git config --global --add safe.directory /github/workspace
             - name: Sync Wiki to Docs
               uses: newrelic/wiki-sync-action@master
               with:
