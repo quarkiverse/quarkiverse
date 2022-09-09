@@ -2,9 +2,9 @@
 
 **NOTE** this content is still a draft - feedback welcome!
 
-Quarkus is a Kubernetes Native Java stack tailored for the OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, as well as an ever growing ecosystem of its extensions. At the beginning we were accepting all the contributed extensions in the core Quarkus repository. Eventually though it grew too large and lead to a maintenance overhead. In addition to that, in some cases it's simply not always sensible to include an extension into the core Quarkus repository.
+Quarkus is a Kubernetes Native Java stack tailored for the OpenJDK HotSpot and GraalVM, crafted from the best of breed Java libraries and standards, as well as an ever growing ecosystem of its extensions. At the beginning we were accepting all the contributed extensions in the core Quarkus repository. Eventually though it grew too large and lead to a maintenance overhead. In addition to that, in some cases it's simply not always sensible to include an extension into the main Quarkus repository.
 
-Some have since then created their own repositories external to Quarkus, but others just never happened because not everyone wants the overhead of maintaining a build setup. Even the Quarkus core developers sometimes had ideas for an extension but not solid enough to be included in the Quarkus core repository.
+Some have since then created their own repositories external to Quarkus, but others just never happened because not everyone wants the overhead of maintaining a build setup. Even the Quarkus core developers sometimes had ideas for an extension but not solid enough to be included in the main Quarkus repository.
 
 Quarkiverse is our proposed solution to create a "home" for such extensions/projects.
 
@@ -18,7 +18,7 @@ Note: the inclusion in tools are an ongoing development. Estimated to happen aft
 
 # Why Quarkiverse
 
-In the early days and actually up until recently, Quarkus extensions contributed by the community members (including the core Quarkus team) have been welcomed in the Quarkus core repository at https://github.com/quarkusio/quarkus. Today the core repository has grown a lot and it's evident that it simply becomes troublesome to work with it for its contributors. That and other maintenance and infrastructure related issues inspired the creation of a separate organization called Quarkiverse to host Quarkus extension projects contributed by the community (including the Quarkus core team members themselves).
+In the early days and actually up until recently, Quarkus extensions contributed by the community members (including the core Quarkus team) have been welcomed in the main Quarkus repository at https://github.com/quarkusio/quarkus. Today the main repository has grown a lot and it's evident that it simply becomes troublesome to work with it for its contributors. That and other maintenance and infrastructure related issues inspired the creation of a separate organization called Quarkiverse to host Quarkus extension projects contributed by the community (including the Quarkus core team members themselves).
 
 The advantages to join Quarkiverse are:
 
@@ -45,7 +45,7 @@ While the extensions under the Quarkiverse organization are generally independen
 
 ## Getting an extension onboarded:
 
-1. The first step is to create or pick an **Extension Proposal** ticket in the [Quarkus issue tracker](https://github.com/quarkusio/quarkus/issues) and let us know if you are interested in leading the development of this extension by commenting on the issue. The Quarkus team will review and discuss with you and community if the proposal extension should belong to core or live in the Quarkiverse Hub.
+1. The first step is to create or pick an **Extension Proposal** ticket in the [Quarkus issue tracker](https://github.com/quarkusio/quarkus/issues) and let us know if you are interested in leading the development of this extension by commenting on the issue. The Quarkus team will review and discuss with you and community if the proposal extension should belong to the main repository or live in the Quarkiverse Hub.
 2. When decided, the Quarkiverse Team will initialize the repository in the Quarkiverse organization for you with skeleton code ready. Until then, if not already done, you can start implementing your extension from a skeleton with this command:
 ```shell
 mvn io.quarkus:quarkus-maven-plugin:create-extension \
