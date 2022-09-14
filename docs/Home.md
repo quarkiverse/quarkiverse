@@ -56,37 +56,42 @@ mvn io.quarkus:quarkus-maven-plugin:create-extension \
 
 The Quarkiverse team will provide the repository ready for development, nevertheless, it is always good to know that we respect the following conventions and policies. 
 
-## Identify Project Maintainer ##
+### Identify Project Maintainer ##
 
 Each project will have a GitHub team, and in here at least one must be listed and active as maintainer. This is the person that will be expected to lead and drive the project.
 
-## Repository name
+### Repository name
 
 The repository name under the quarkiverse organization should have `quarkus-` prefix. This will help avoid potential conflicts when cloning and/or forking the repository.
 
-## Project's Maven artifact `groupId`s
+### Project's Maven artifact `groupId`s
 
 The Maven `groupId` of the project's artifacts should follow the following format: `io.quarkiverse.<project-name>`. In other words, the project’s `groupId` should start with the `io.quarkiverse.` prefix followed by the project-specific unique name (minus the `quarkus-` prefix) in which dots aren't allowed. Also, since your `groupId` should also be your root package name, if it contains characters that are not allowed in package names (such as `-`), you should concatenate all the parts of your project name to form a single, lowercased name. So if your repository is named `quarkus-foo-bar`, your `groupId` would become `io.quarkiverse.foobar`.
 
-## Project's Maven artifact `artifactId`s
+### Project's Maven artifact `artifactId`s
 
 The project’s `artifactId` should start with the `quarkus-` prefix.
 
-## Root package name
+### Root package name
 
 The root package name is expected to be the same as the project’s Maven artifact `groupId`, i.e. `io.quarkiverse.jberet`, if project name is `jberet`. See the [`groupId` section](#projects-maven-artifact-groupids) for more details. 
 
-## Parent POM
+### Parent POM
 
 All Quarkiverse projects are expected to use [io.quarkiverse:quarkiverse-parent](https://github.com/quarkiverse/quarkiverse-parent) as the parent POM.
 This POM contains common project release and artifact publishing configuration.
 
-## Provide mechanism to do cross-testing of named quarkus core and platform versions
+### Provide mechanism to do cross-testing of named quarkus core and platform versions
 
 All Quarkiverse projects should have a build and test suite that can be parameterized to use specific Quarkus and Platform versions to ensure we can get
 early warning of issues of master builds; but also to verify compatibiltiy with maintanence branch/tags.
 
 Mechanism is To be defined, but something like having a script that will take quarkus core and quarkus platform Group, Artifact and IDs.
+
+## Documenting your extension
+
+Consider adding documentation to the [Quarkiverse docs page](https://quarkiverse.github.io/quarkiverse-docs/index/index/index.html). 
+You can submit changes via github](https://github.com/quarkiverse/quarkiverse-docs).
 
 ## LICENSE
 
