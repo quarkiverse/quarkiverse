@@ -91,7 +91,7 @@ Mechanism is To be defined, but something like having a script that will take qu
 ## Documenting your extension
 
 Consider adding documentation to the [Quarkiverse docs page](https://quarkiverse.github.io/quarkiverse-docs/index/index/index.html). 
-You can submit changes via github](https://github.com/quarkiverse/quarkiverse-docs).
+You can submit changes via [GitHub](https://github.com/quarkiverse/quarkiverse-docs).
 
 ## LICENSE
 
