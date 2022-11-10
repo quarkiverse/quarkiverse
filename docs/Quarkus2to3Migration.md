@@ -24,11 +24,11 @@ Note that the Jakarta changes are available in the Quarkus 3.0.0.Alpha1 release,
 # Are you affected?
 
 Our analysis found that all but one or two extensions in the Quarkiverse are affected by these changes. If you want to check if changes are needed, you can either run the migration scripts and see what’s changed, or grep your codebase for the following
-- javax (if you have code, you almost certainly have this)
-- org.reactivestreams
-- hibernate
+- `javax` (if you have code, you almost certainly have this)
+- `org.reactivestreams`
+- `hibernate`
 
-Files like `persistence.xml` also need to be updated, but if you have those you almost certainly also have a javax.* dependency somewhere in the pom.xml or Java code.
+Files like `persistence.xml` also need to be updated, but if you have those you almost certainly also have a `javax.*` dependency somewhere in the pom.xml or Java code.
 
 # When should you act?
 
@@ -57,22 +57,6 @@ For newer repositories, it may work to apply the following patch (if it fails to
 curl https://patch-diff.githubusercontent.com/raw/quarkiverse/quarkus-pact/pull/19.patch > ../19.patch
 git am ../19.patch
 ```
-
-
-## Version updates
-
-At some point, in the main branch, update `.github/project.yml` with the versions for the 3.0 stream.
-
-For example,
-
-```
-release:
-  current-version: 3.0.0.Alpha3
-  next-version: 999-SNAPSHOT
-```
-You may want to choose different snapshot versions for 2.x and 3.x, to avoid confusing behaviour in your local maven repo. 
-
-However, merging this change will trigger a release, so do not merge until you're ready to release. 
 
 # Upgrade
 
@@ -134,9 +118,9 @@ implementation 'io.quarkus:quarkus-[your-dependency-here]:3.0.0.Alpha1'
 ### Manual process, step 3: Get everything working
 
 At this point, if you build, you should see a lot of failures. 
-Resolving them will involve upgrading other dependencies to bring in versions which use Jakarta, and searching for javax.* references in the codebase. 
+Resolving them will involve upgrading other dependencies to bring in versions which use Jakarta, and searching for `javax.*` references in the codebase. 
 
-Be aware that not all javax packages have been moved to Jakarta. (That's why using a tool is recommended.) 
+Be aware that not all `javax` packages have been moved to Jakarta. (That's why using a tool is recommended.) 
 The Jakarta Eclipse Transformer (which only changes the source code, not the POM) is an alternative to the OpenRewrite recipe.
 
 ## Declare your compatibilities
@@ -148,6 +132,23 @@ If your extension has some non-standard compatibilities, follow the [compatibili
 This is a good time to think about testing. Does your project have integration tests? Are they running as part of the CI? If you don’t have a codestart, consider making one, because codestarts are great.
 
 To be extra-cautious, consider making a project which is based on Quarkus 3 to check the extension is working well. (If this fails and your CI is passing, it’s an indication that more automated integration tests might be needed.)
+
+
+# Version updates
+
+On your first release, bump your major version number in the 3.0 stream `.github/project.yml`.
+
+For example,
+
+```
+release:
+  current-version: 3.0.0.Alpha3
+  next-version: 999-SNAPSHOT
+```
+You may want to choose different snapshot versions for 2.x and 3.x, to avoid confusing behaviour in your local maven repo.
+
+(Don't forget that merging a change to `project.yml` will trigger a release, so do not merge until you're ready to release.)
+
 
 # It’s all gone wrong! Help!
 This is a big change, and we’re expecting some rough bumps. If you hit issues, we’d love to hear about them, so we can either fix them, or figure out a workaround to share with other extensions.
