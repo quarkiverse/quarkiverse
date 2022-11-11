@@ -23,7 +23,7 @@ Note that the Jakarta changes are available in the Quarkus 3.0.0.Alpha1 release,
 
 # Are you affected?
 
-Our analysis found that all but one or two extensions in the Quarkiverse are affected by these changes. If you want to check if changes are needed, you can either run the migration scripts and see what’s changed, or grep your codebase for the following
+Our analysis found that all but one or two extensions in the Quarkiverse are affected by these changes. If you want to check if changes are needed, you can either run the [migration scripts](#upgrade) and see what’s changed, or grep your codebase for the following
 - `javax` (if you have code, you almost certainly have this)
 - `org.reactivestreams`
 - `hibernate`
