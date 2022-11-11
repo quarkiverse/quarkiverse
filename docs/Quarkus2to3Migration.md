@@ -60,10 +60,18 @@ git am ../19.patch
 
 # Upgrade
 
-To make updating reliable and simple, the team has written an Open Rewrite script. To run it via jbang (and curl):
+To make updating reliable and simple, the team has written an Open Rewrite script. You can run it via jbang (and curl).
+
+For Linux:
 
 ```
 curl -Ls https://sh.jbang.dev | bash -s - --fresh upgrade-to-quarkus3@quarkusio
+```
+
+For Windows:
+
+```
+iex "& { $(iwr https://ps.jbang.dev) } --fresh upgrade-to-quarkus3@quarkusio"
 ```
 
 Alternatively, you can [download the recipe](https://github.com/quarkusio/quarkus/blob/main/jakarta/quarkus3.yml) and then run
