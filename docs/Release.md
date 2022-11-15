@@ -9,8 +9,8 @@ Example:
 ```yaml
 name: Quarkiverse Parent
 release:
-  current-version: 2
-  next-version: 3-SNAPSHOT    
+  current-version: "2"
+  next-version: "999-SNAPSHOT"    
 ```
 
 * current-version: The released version
