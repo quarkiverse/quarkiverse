@@ -48,7 +48,7 @@ While the extensions under the Quarkiverse organization are generally independen
 1. The first step is to create or pick an **Extension Proposal** ticket in the [Quarkus issue tracker](https://github.com/quarkusio/quarkus/issues) and let us know if you are interested in leading the development of this extension by commenting on the issue. The Quarkus team will review and discuss with you and community if the proposal extension should belong to the main repository or live in the Quarkiverse Hub.
 2. When decided, the Quarkiverse Team will initialize the repository in the Quarkiverse organization for you with skeleton code ready. Until then, if not already done, you can start implementing your extension from a skeleton with this command:
 ```shell
-mvn io.quarkus:quarkus-maven-plugin:create-extension \
+mvn io.quarkus.platform:quarkus-maven-plugin:create-extension \
  -DgroupId=io.quarkiverse.[myext] -DextensionId=[my-ext] -U
 ```
 3. Follow instructions in [Quarkus Ecosystem-CI](https://github.com/quarkusio/quarkus-ecosystem-ci) to enable the extension to take part in overall testing.
