@@ -40,12 +40,13 @@ We recommend starting to prepare now if getting to Quarkus 3 is complex. If the 
 
 ## Make your new branch
 
-In the main extension repo, set up a new branch for the legacy 2.x code stream. We recommend that ‘main’ is used for the 3.0 stream. For most extensions, a 2.0 and a 3.0 version should co-exist, at least for a while.
+In the main extension repo, set up a new branch for the legacy 2.x code stream. 
 
-The quarkus-snapshot.yaml inside each repository should somehow parameterize the call to `setup-and-test` specifying that the main branch is 3.x and not 2.x until the 3.x branch in quarkusio/quarkus is merged in main.
-We do not have a worked example of this yet!
+We recommend that `main` is used for the 3.0 stream. For most extensions, a 2.0 and a 3.0 version should co-exist, at least for a while. 
 
-## Set up Github actions on the new branch
+We don't enforce any branch name for your extension supporting the 2.x stream, but we recommend adopting a `V.x` pattern where `V` is the major version of your extension that builds against the 2.x stream (for example, if `1.2.3` is the last version of your extension built against Quarkus 2.x, create a `1.x` branch).
+
+## Set up GitHub actions on the new branch
 
 ### Workflow updates
 
@@ -113,14 +114,14 @@ In the exceptional case that you are not using the platform BOM, the dependency 
 <dependency>
   <groupId>io.quarkus</groupId>
   <artifactId>quarkus-[your-dependency-here]</artifactId>
-  <version>3.0.0.Alpha1</version>
+  <version>3.0.0.Alpha3</version>
 </dependency>
 ```
 
 In Gradle, it would be:
 
 ```
-implementation 'io.quarkus:quarkus-[your-dependency-here]:3.0.0.Alpha1'
+implementation 'io.quarkus:quarkus-[your-dependency-here]:3.0.0.Alpha3'
 ```
 
 ### Manual process, step 3: Get everything working
@@ -139,7 +140,7 @@ If your extension has some non-standard compatibilities, follow the [compatibili
 
 This is a good time to think about testing. Does your project have integration tests? Are they running as part of the CI? If you don’t have a codestart, consider making one, because codestarts are great.
 
-To be extra-cautious, consider making a project which is based on Quarkus 3 to check the extension is working well. (If this fails and your CI is passing, it’s an indication that more automated integration tests might be needed.)
+To be extra cautious, consider making a project which is based on Quarkus 3 to check the extension is working well. (If this fails and your CI is passing, it’s an indication that more automated integration tests might be needed.)
 
 
 # Version updates
@@ -153,7 +154,7 @@ release:
   current-version: 3.0.0.Alpha3
   next-version: 999-SNAPSHOT
 ```
-You may want to choose different snapshot versions for 2.x and 3.x, to avoid confusing behaviour in your local maven repo.
+You may want to choose different snapshot versions for 2.x and 3.x, to avoid confusing behavior in your local maven repo.
 
 (Don't forget that merging a change to `project.yml` will trigger a release, so do not merge until you're ready to release.)
 
