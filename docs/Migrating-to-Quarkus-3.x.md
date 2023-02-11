@@ -58,6 +58,11 @@ For newer repositories, it may work to apply the following patch (if it fails to
 curl https://patch-diff.githubusercontent.com/raw/quarkiverse/quarkus-pact/pull/19.patch > ../19.patch
 git am ../19.patch
 ```
+## Update documentation
+
+In order to render the documentation from the `docs/` folder, you also need to update the `docs/antora.yml` to match the branch name (or something nicer). See an example [here](https://github.com/quarkiverse/quarkus-renarde/commit/8ba4566ce09b6f8314856f66bf86b2b1df68806e). 
+
+Then update the [Antora Playbook](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml) in the `quarkiverse/quarkiverse-docs` repository to include your new branch. See an example [here](https://github.com/quarkiverse/quarkiverse-docs/commit/11bdff4fd8c954da0729593a355c2b35b0c6aa97).
 
 # Upgrade
 
