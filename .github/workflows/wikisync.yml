@@ -1,6 +1,5 @@
 name: sync-wiki
 
-
 on:
   push:
     branches:
