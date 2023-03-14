@@ -5,10 +5,12 @@ These changes will affect extensions, so extension maintainers should be prepare
 
 Don't worry, we have a script that automates most (if not all) of the migration that works for applications... and extensions.
 
-# Here are the known breakers:
+# Known breakers
 
-## Java EE to Jakarta [released now]
-Quarkus is moving to use Jakarta APIs rather than Java EE ones. In most cases the functionality isn’t different, but package names are.
+## Jakarta EE 10 [released now]
+
+Quarkus is moving to use Jakarta EE 10 APIs instead of Jakarta EE 8 ones.
+In most cases the functionality isn’t different, but package names are.
 
 ## Hibernate ORM 5 to 6 [released now]
 
