@@ -1,17 +1,23 @@
+:toc:
+
 # What’s changing
+
 [Quarkus 3 is on the way](https://quarkus.io/blog/road-to-quarkus-3/), and it has breaking changes. 
-These changes will affect extensions, so extension maintainers should be prepared. 
+These changes will affect extensions, so extension maintainers should be prepared.
+
+Don't worry, we have a script that automates most (if not all) of the migration that works for applications... and extensions.
 
 # Here are the known breakers:
 
 ## Java EE to Jakarta [released now]
 Quarkus is moving to use Jakarta APIs rather than Java EE ones. In most cases the functionality isn’t different, but package names are.
 
-## Hibernate ORM 5 to 6 [coming soon]
+## Hibernate ORM 5 to 6 [released now]
 
-Quarkus 3 will ship with Hibernate ORM 6 instead of Hibernate ORM 5. This is major release, and so there are some breaking changes, especially if your extension uses the Criteria API. We don’t expect that many extensions rely on these, but in case you do, the Hibernate team have published a full migration guide.
+Quarkus 3 ships with Hibernate ORM 6 instead of Hibernate ORM 5. This is a major release, and so there are some breaking changes, especially if your extension uses the Criteria API. We don’t expect that many extensions rely on these, but in case you do, the Hibernate team have published a [full migration guide](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-3.0:-Hibernate-ORM-5-to-6-migration).
 
-## Flow, instead of reactive streams [coming soon]
+## Flow, instead of reactive streams [released now]
+
 Quarkus 3 uses the JDK Flow API introduced since Java 9 instead of the legacy Reactive Streams API.
 For a discussion of what changes were needed within Quarkus itself, see
 - https://groups.google.com/g/quarkus-dev/c/RpeqFv1dr8k
@@ -19,11 +25,9 @@ For a discussion of what changes were needed within Quarkus itself, see
 
 If your extension needs to use a library that is still using the legacy Reactive Streams API then you should use the adapters from the Mutiny Zero project (see https://smallrye.io/smallrye-mutiny-zero).
 
-Note that the Jakarta changes are available in the Quarkus 3.0.0.Alpha1 release, but the Hibernate ORM and Flow changes are still under development.
-
 # Are you affected?
 
-Our analysis found that all but one or two extensions in the Quarkiverse are affected by these changes. If you want to check if changes are needed, you can either run the [migration scripts](#upgrade) and see what’s changed, or grep your codebase for the following
+Our analysis found that all but one or two extensions in the Quarkiverse are affected by these changes. If you want to check if changes are needed, you can either run the [migration script](#upgrade) and see what’s changed, or grep your codebase for the following
 - `javax` (if you have code, you almost certainly have this)
 - `org.reactivestreams`
 - `hibernate`
@@ -32,9 +36,9 @@ Files like `persistence.xml` also need to be updated, but if you have those you 
 
 # When should you act?
 
-It’s worth thinking about how big an impact these changes will have on your extension. For some extensions it’s a trivial search and replace, but for other extensions the impact may be more complicated, particularly if you depend on libraries which have not yet made the move to Jakarta.
+It’s worth thinking about how big an impact these changes will have on your extension. For some extensions, you can just run the upgrade script, but for other extensions the impact may be more complicated, particularly if you depend on libraries which have not yet made the move to Jakarta.
 
-We recommend starting to prepare now if getting to Quarkus 3 is complex. If the move is straightforward, you may wish to wait a while, so that you don’t need to maintain two branches for several months.
+Now is a good time to work on the Quarkus 3.0-compatibility of your extensions.
 
 # Implement the migration
 
@@ -58,6 +62,7 @@ For newer repositories, it may work to apply the following patch (if it fails to
 curl https://patch-diff.githubusercontent.com/raw/quarkiverse/quarkus-pact/pull/19.patch > ../19.patch
 git am ../19.patch
 ```
+
 ## Update documentation
 
 In order to render the documentation from the `docs/` folder, you also need to update the `docs/antora.yml` to match the branch name (or something nicer). See an example [here](https://github.com/quarkiverse/quarkus-renarde/commit/8ba4566ce09b6f8314856f66bf86b2b1df68806e). 
@@ -66,7 +71,14 @@ Then update the [Antora Playbook](https://github.com/quarkiverse/quarkiverse-doc
 
 # Upgrade
 
-To make updating reliable and simple, the team has written an Open Rewrite script. You can run it via jbang (and curl).
+## Step 1: Upgrade your parent pom to the latest version of the `quarkiverse-parent` pom.
+
+Make sure you depend on the [latest version of the Quarkiverse parent](https://central.sonatype.com/artifact/io.quarkiverse/quarkiverse-parent/12/versions) (at least `12`), as this ensures you will pick up any Quarkus-3-related support, such as enforcer changes and import ordering fixes.
+
+## Step 2: Run the upgrade script and enjoy!
+
+To make updating reliable and simple, the team has written a JBang script that takes care of most of the upgrade (it updates the dependencies, the Java or Kotlin files, the codestarts, the documentation...).
+You can run it via jbang (and curl).
 
 For Linux:
 
@@ -80,66 +92,13 @@ For Windows:
 iex "& { $(iwr https://ps.jbang.dev) } --fresh upgrade-to-quarkus3@quarkusio"
 ```
 
-Alternatively, you can [download the recipe](https://github.com/quarkusio/quarkus/blob/main/jakarta/quarkus3.yml) and then run
-
-```
-mvn org.openrewrite.maven:rewrite-maven-plugin:4.36.0:run \
--Drewrite.configLocation=[SOME_PATH]/quarkus3.yml \
--DactiveRecipes=io.quarkus.openrewrite.Quarkus3
-```
-
-Don’t forget to migrate your codestart if you have one.
-
-## Alternate process: manual upgrade
-
-If you’re not able to use the automation or some step is missed, you can manually move to the latest dependencies and patch up the code manually.
-
-### Manual process, step 1: Upgrade your parent pom to the latest version of the quarkiverse-parent pom.
-
-Make sure you depend on the [latest version of the Quarkiverse parent](https://search.maven.org/search?q=a:quarkiverse-parent) (at least 11), as this ensures you will pick up any Quarkus-3-related support, such as enforcer changes and import ordering fixes.
-
-### Manual process, step 2: Update the Quarkus version
-
-Update the Quarkus dependencies in your pom.xml to depend on the latest 3.x  Quarkus. You can either
-
-- use the nightly snapshot, following the [instructions for using snapshots](https://github.com/quarkusio/quarkus/tree/main/jakarta#using-snapshots) 
-- depend on the latest release, 3.0.0.Alpha1
-
-Using the release is recommended unless you need something in the snapshots.
-
-To update the Quarkus version, update the property:
-
-```
-<quarkus.version>3.0.0.Alpha1</quarkus.version>
-```
-
-In the exceptional case that you are not using the platform BOM, the dependency would look like:
-
-```
-<dependency>
-  <groupId>io.quarkus</groupId>
-  <artifactId>quarkus-[your-dependency-here]</artifactId>
-  <version>3.0.0.Alpha3</version>
-</dependency>
-```
-
-In Gradle, it would be:
-
-```
-implementation 'io.quarkus:quarkus-[your-dependency-here]:3.0.0.Alpha3'
-```
-
-### Manual process, step 3: Get everything working
-
-At this point, if you build, you should see a lot of failures. 
-Resolving them will involve upgrading other dependencies to bring in versions which use Jakarta, and searching for `javax.*` references in the codebase. 
-
-Be aware that not all `javax` packages have been moved to Jakarta. (That's why using a tool is recommended.) 
-The Jakarta Eclipse Transformer (which only changes the source code, not the POM) is an alternative to the OpenRewrite recipe.
+Note: if you have problems with the automated process and it doesn't look solvable (but please report the issue in [the Quarkus tracker](https://github.com/quarkusio/quarkus/issues)!), have a look at the manual process described [here](https://github.com/quarkiverse/quarkiverse/wiki/Migrating-to-Quarkus-3.x:-Manual-upgrade).
 
 ## Declare your compatibilities
 
-If your extension has some non-standard compatibilities, follow the [compatibility documentation instructions](https://github.com/quarkusio/quarkus-extension-catalog#compatibility-with-older-quarkus-core-versions)  to update the extensions catalog with information about your new versions, and what versions of Quarkus they work with.
+This is optional, in most cases, you don't need to do anything.
+
+If your extension has some non-standard compatibilities, follow the [compatibility documentation instructions](https://github.com/quarkusio/quarkus-extension-catalog#compatibility-with-older-quarkus-core-versions) to update the extensions catalog with information about your new versions, and what versions of Quarkus they work with.
 
 ## Testing
 
@@ -147,24 +106,26 @@ This is a good time to think about testing. Does your project have integration t
 
 To be extra cautious, consider making a project which is based on Quarkus 3 to check the extension is working well. (If this fails and your CI is passing, it’s an indication that more automated integration tests might be needed.)
 
+# Release your extension
 
-# Version updates
+On your first release, bump your major version number to the next major in `.github/project.yml`.
+For instance, if your last Quarkus 2.x compatible release was `1.2.3`, make the Quarkus 3.x compatible release `2.0.0.Alpha1`.
 
-On your first release, bump your major version number in the 3.0 stream `.github/project.yml`.
+As long as you rely on an Alpha of Quarkus 3.0, please keep the AlphaX suffix and release `2.0.0` when your extension is upgraded to Quarkus `3.0.0.Final`.
 
 For example,
 
 ```
 release:
-  current-version: 3.0.0.Alpha3
+  current-version: 2.0.0.Alpha1
   next-version: 999-SNAPSHOT
 ```
 You may want to choose different snapshot versions for 2.x and 3.x, to avoid confusing behavior in your local maven repo.
 
 (Don't forget that merging a change to `project.yml` will trigger a release, so do not merge until you're ready to release.)
 
-
 # It’s all gone wrong! Help!
+
 This is a big change, and we’re expecting some rough bumps. If you hit issues, we’d love to hear about them, so we can either fix them, or figure out a workaround to share with other extensions.
 
 There are a few ways you can communicate with us:
@@ -175,7 +136,3 @@ There are a few ways you can communicate with us:
 Issues on the main Quarkus repo. Please @mention @maxandersen and @holly-cummins
 
 We’d also like to hear from you if things go well. We’ll be tracking the “all clears” so we can decide when it makes sense to move from 3.0.0 Alpha to a final release.
-
-# What’s Quarkus itself doing?
-
-https://github.com/quarkusio/quarkus/tree/main/jakarta has useful information on how the Quarkus core is working through the migration effort. 
