@@ -1,5 +1,3 @@
-:toc:
-
 # What’s changing
 
 [Quarkus 3 is on the way](https://quarkus.io/blog/road-to-quarkus-3/), and it has breaking changes. 
