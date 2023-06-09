@@ -30,7 +30,7 @@ issues:
 
 ## [Register the extension documentation in the quarkiverse-docs](https://github.com/quarkiverse/quarkiverse-docs)
 
-In order to have your extension documentation listed in the [Quarkiverse Documentation website](https://quarkiverse.github.io/quarkiverse-docs/), open a PR including it in the [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml)
+In order to have your [extension documentation](https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension) listed in the [Quarkiverse Documentation website](https://quarkiverse.github.io/quarkiverse-docs/), open a PR including it in the [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml)
 
 ## [Make your extension available in the tooling](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
 
