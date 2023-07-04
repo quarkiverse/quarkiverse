@@ -39,7 +39,7 @@ There is a small trick you can do if you have an `integration-tests` module in y
             </property>
         </activation>
         <modules>
-            <module>integration-test</module>
+            <module>integration-tests</module>
         </modules>
     </profile>
 </profiles>
