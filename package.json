@@ -21,7 +21,7 @@
     "jest-environment-jsdom": "^29.6.1",
     "jest-puppeteer": "^9.0.0",
     "jest-puppeteer-preset": "^7.0.1",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "yaml-jest": "^1.2.0"
   },
   "keywords": [
