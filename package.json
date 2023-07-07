@@ -10,11 +10,13 @@
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-sharp": "^5.11.0",
     "gatsby-source-filesystem": "^5.11.0",
+    "gatsby-transformer-remark": "^6.11.0",
     "gatsby-transformer-sharp": "^5.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "jest": "^29.6.1",
     "prettier": "^2.8.8"
   },
   "keywords": [
@@ -28,7 +30,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "ACTIVE_ENV=test SUPPRESS_ENV_OUTPUT=true jest --testPathIgnorePatterns test-integration/",
+    "test:watch": "ACTIVE_ENV=test SUPPRESS_ENV_OUTPUT=true jest --watch --testPathIgnorePatterns test-integration/"
   },
   "repository": {
     "type": "git",
