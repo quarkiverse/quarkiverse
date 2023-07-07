@@ -56,7 +56,7 @@ jobs:
           retention-days: 3
   deploy:
     # Only try and deploy on merged code
-    if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule')"
+    if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
     needs: [ unit-test, build ]
     runs-on: ubuntu-latest
     steps:
