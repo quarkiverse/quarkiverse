@@ -1,4 +1,4 @@
-# Welcome to Quarkiverse!
+# Welcome to Quarkiverse Hub!
 
 The Quarkiverse GitHub organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
 
