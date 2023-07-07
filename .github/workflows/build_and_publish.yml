@@ -1,0 +1,76 @@
+name: Gatsby Publish
+
+on:
+  push:
+    branches:
+      [ main ]
+  pull_request:
+    types: [ opened, synchronize, reopened ]
+  schedule: ## Do a run daily, to refresh website content
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm run test
+        env:
+          CI: true
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - run: npm run build
+        env:
+          NODE_ENV: production
+          GATSBY_ACTIVE_ENV: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run test:int
+        env:
+          CI: true
+      - name: Store PR id
+        run: echo ${{ github.event.number }} > ./public/pr-id.txt
+      - name: Publishing directory for PR preview
+        uses: actions/upload-artifact@v2
+        with:
+          name: site
+          path: ./public
+          retention-days: 3
+  deploy:
+    # Only try and deploy on merged code
+    if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
+    needs: [ unit-test, build ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: npm install
+      - uses: enriikke/gatsby-gh-pages-action@v2
+        with:
+          access-token: ${{ secrets.ACCESS_TOKEN }}
+          deploy-branch: pages
+          gatsby-args: --prefix-paths
+        env:
+          NODE_ENV: production
+          GATSBY_ACTIVE_ENV: production
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
