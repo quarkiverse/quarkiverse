@@ -16,8 +16,13 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
     "jest": "^29.6.1",
-    "prettier": "^2.8.8"
+    "jest-environment-jsdom": "^29.6.1",
+    "jest-puppeteer": "^9.0.0",
+    "jest-puppeteer-preset": "^7.0.1",
+    "prettier": "^2.8.8",
+    "yaml-jest": "^1.2.0"
   },
   "keywords": [
     "gatsby"
@@ -31,7 +36,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "ACTIVE_ENV=test SUPPRESS_ENV_OUTPUT=true jest --testPathIgnorePatterns test-integration/",
-    "test:watch": "ACTIVE_ENV=test SUPPRESS_ENV_OUTPUT=true jest --watch --testPathIgnorePatterns test-integration/"
+    "test:watch": "ACTIVE_ENV=test SUPPRESS_ENV_OUTPUT=true jest --watch --testPathIgnorePatterns test-integration/",
+    "test:int": "echo '--- Do not forget to run \u001b[1mgatsby build\u001b[0m before running integration tests! ---' && jest --config=jest.integration.config.js test-integration/"
   },
   "repository": {
     "type": "git",
