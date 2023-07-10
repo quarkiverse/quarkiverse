@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[187],{5182:function(e,t,n){n.r(t),n.d(t,{default:function(){return a}});var l=n(7294);function a(e){let{data:t}=e;const{markdownRemark:n}=t,{fields:a,html:r}=n;return l.createElement("div",null,l.createElement("div",null,l.createElement("h1",null,a.title),l.createElement("div",{dangerouslySetInnerHTML:{__html:r}})))}}}]);
+//# sourceMappingURL=component---src-pages-markdown-remark-fields-slug-jsx-5a1ea347804845accf43.js.map
