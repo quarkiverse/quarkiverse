@@ -58,19 +58,16 @@ jobs:
     # Only try and deploy on merged code
     if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
     needs: [ unit-test, build ]
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Download Built site
+        uses: dawidd6/action-download-artifact@v2
         with:
-          node-version: '18'
-      - run: npm install
-      - uses: enriikke/gatsby-gh-pages-action@v2
+          name: site
+          path: site
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          access-token: ${{ secrets.ACCESS_TOKEN }}
-          deploy-branch: pages
-          gatsby-args: --prefix-paths
-        env:
-          NODE_ENV: production
-          GATSBY_ACTIVE_ENV: production
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          folder: site # The folder the action should deploy.
