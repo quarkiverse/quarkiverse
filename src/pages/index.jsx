@@ -1,31 +1,28 @@
 import * as React from 'react'
-import { graphql } from 'gatsby'
+import Layout from "../components/layout";
+import {graphql} from "gatsby";
 
-    const HomePage = ({data}) => {
-        return (
-            <div>
-                <h2>Quarkiverse Hub</h2>
-                <ul>
-                {data.allMarkdownRemark.edges.map((edge, i) => edge.node.fields.slug.startsWith("_") || (<li key={i}><a href={edge.node.fields.slug}>{edge.node.fields.title}</a></li>)
-                )}
-
-                </ul>
-
-            </div>
-        )
+const HomePage = ({data}) => {
+    const {markdownRemark} = data // data.markdownRemark holds your post data
+    const {fields, html} = markdownRemark
+    return (
+        <Layout>
+            <h1>{fields.title}</h1>
+            <div
+                dangerouslySetInnerHTML={{__html: html}}
+            />
+        </Layout>
+    )
 }
 
-    export const query = graphql`
-  query MyQuery {
-  allMarkdownRemark {
-    edges {
-      node {
-        fields {
-          slug
-          title
-        }
-      }
+export const query = graphql`
+  query Home {
+  markdownRemark(fields: {slug: {eq: "home"}}) {
+    fields {
+      slug
+      title
     }
+    html
   }
 }
 `

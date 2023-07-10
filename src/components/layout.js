@@ -6,13 +6,15 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import {graphql, useStaticQuery} from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import Footer from "./footer";
+import Navigation from "./Navigation";
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
+const Layout = ({children}) => {
+    const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
         siteMetadata {
@@ -22,30 +24,25 @@ const Layout = ({ children }) => {
     }
   `)
 
-  return (
-    <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: `var(--size-content)`,
-          padding: `var(--size-gutter)`,
-        }}
-      >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
-    </>
-  )
+    return (
+        <>
+            <Header siteTitle={data.site.siteMetadata?.title || `Title`}/>
+            <div
+                style={{
+                    margin: `0 auto`,
+                    maxWidth: `var(--size-content)`,
+                    padding: `var(--size-gutter)`,
+                    display: 'flex',
+                    flexDirection: 'row',
+                    columnGap: '40px'
+                }}
+            >
+                <Navigation/>
+                <main>{children}</main>
+            </div>
+            <Footer/>
+        </>
+    )
 }
 
 export default Layout
