@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgatsby_starter_default=self.webpackChunkgatsby_starter_default||[]).push([[230],{610:function(e,t,l){l.r(t);var a=l(7294);t.default=e=>{let{data:t}=e;return a.createElement("div",null,a.createElement("h2",null,"Quarkiverse Hub"),a.createElement("ul",null,t.allMarkdownRemark.edges.map(((e,t)=>e.node.fields.slug.startsWith("_")||a.createElement("li",{key:t},a.createElement("a",{href:e.node.fields.slug},e.node.fields.title))))))}}}]);
-//# sourceMappingURL=component---src-pages-index-jsx-00b32fd0444ba320d93e.js.map
