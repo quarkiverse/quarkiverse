@@ -8,6 +8,8 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 module.exports = {
+  // remove or update this once the URL is finalised and we add a cname
+  pathPrefix: `/quarkiverse`,
   siteMetadata: {
     title: `Quarkiverse Hub`,
     description: `The Quarkiverse Hub provides support for Quarkus extension projects contributed by the community.`,

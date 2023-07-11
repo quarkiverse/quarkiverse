@@ -43,6 +43,7 @@ jobs:
           NODE_ENV: production
           GATSBY_ACTIVE_ENV: production
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PREFIX_PATHS: true
       - run: npm run test:int
         env:
           CI: true
