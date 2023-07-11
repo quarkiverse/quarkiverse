@@ -6,7 +6,7 @@ const HomePage = ({data}) => {
     const {markdownRemark} = data // data.markdownRemark holds your post data
     const {fields, html} = markdownRemark
     return (
-        <Layout>
+        <Layout pageName={fields.pageName}>
             <h1>{fields.title}</h1>
             <div
                 dangerouslySetInnerHTML={{__html: html}}
@@ -21,6 +21,7 @@ export const query = graphql`
     fields {
       slug
       title
+      pageName
     }
     html
   }
