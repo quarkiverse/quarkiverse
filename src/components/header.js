@@ -18,6 +18,7 @@ const Logo = styled(props => <a {...props} />)`
 const PaddedIcon = styled(props => <FontAwesomeIcon {...props} />)`
   margin-left: 10px;
   margin-right: 10px;
+  height: var(--font-md);
 `
 
 const Header = ({siteTitle, pageName}) => (
