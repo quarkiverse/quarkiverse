@@ -43,4 +43,10 @@ exports.onCreateNode = ({node, getNode, actions}, pluginOptions) => {
         name: "title",
         value: nonNullTitle
     });
+
+    createNodeField({
+        node,
+        name: "pageName",
+        value: name
+    });
 };
