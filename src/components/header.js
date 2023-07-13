@@ -3,6 +3,7 @@ import {Link} from "gatsby"
 import {StaticImage} from "gatsby-plugin-image";
 import styled from "styled-components";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Not used directly, but fixes size flash
 import {faPencil} from '@fortawesome/free-solid-svg-icons'
 
 const Logo = styled(props => <a {...props} />)`
@@ -15,7 +16,7 @@ const Logo = styled(props => <a {...props} />)`
   margin-left: 7px;
 `
 
-const PaddedIcon = styled(props => <FontAwesomeIcon {...props} />)`
+const PaddedIcon = styled(props => <FontAwesomeIcon {...props}/>)`
   margin-left: 10px;
   margin-right: 10px;
   height: var(--font-md);
