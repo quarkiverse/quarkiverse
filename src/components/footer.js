@@ -1,7 +1,8 @@
 import * as React from "react"
-import { StaticImage } from "gatsby-plugin-image"
+import {StaticImage} from "gatsby-plugin-image"
 import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
+import {faCreativeCommons, faCreativeCommonsBy} from "@fortawesome/free-brands-svg-icons";
 
 const FooterBar = styled.footer`
   height: 64px;
@@ -66,33 +67,33 @@ const PaddedIcon = styled(props => <FontAwesomeIcon {...props} />)`
 `
 
 const Footer = () => {
-  return (
-    <FooterBar className="navigation">
-      <Spacer />
-      <LicenseInfo>
-        <PaddedIcon icon={["fab", "creative-commons"]} />
-        <PaddedIcon icon={["fab", "creative-commons-by"]} />
-        <LicenseText href="https://creativecommons.org/licenses/by/3.0/">
-          CC by 3.0
-        </LicenseText>
-      </LicenseInfo>
-      <SponsorInfo>
-        Sponsored by
-        <Logo href="https://www.redhat.com/">
-          <StaticImage
-            className="logo"
-            placeholder="none"
-            backgroundColor="black"
-            layout="constrained"
-            formats={["auto", "webp", "avif"]}
-            src="../images/redhat_reversed.svg"
-            alt="Red Hat logo"
-            height={36}
-          />
-        </Logo>
-      </SponsorInfo>
-    </FooterBar>
-  )
+    return (
+        <FooterBar className="navigation">
+            <Spacer/>
+            <LicenseInfo>
+                <PaddedIcon icon={faCreativeCommons}/>
+                <PaddedIcon icon={faCreativeCommonsBy}/>
+                <LicenseText href="https://creativecommons.org/licenses/by/3.0/">
+                    CC by 3.0
+                </LicenseText>
+            </LicenseInfo>
+            <SponsorInfo>
+                Sponsored by
+                <Logo href="https://www.redhat.com/">
+                    <StaticImage
+                        className="logo"
+                        placeholder="none"
+                        backgroundColor="black"
+                        layout="constrained"
+                        formats={["auto", "webp", "avif"]}
+                        src="../images/redhat_reversed.svg"
+                        alt="Red Hat logo"
+                        height={36}
+                    />
+                </Logo>
+            </SponsorInfo>
+        </FooterBar>
+    )
 }
 
 export default Footer
