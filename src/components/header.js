@@ -1,5 +1,5 @@
 import * as React from "react"
-import {Link} from "gatsby"
+import {Link, Script} from "gatsby"
 import {StaticImage} from "gatsby-plugin-image";
 import styled from "styled-components";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
@@ -73,7 +73,7 @@ const Header = ({siteTitle, pageName}) => (
                     Edit this Page
                 </PaddedAnchor>}
         </div>
-        <script defer src="/static/fontawesome/fontawesome-all.js"></script>
+        <Script defer src="/static/fontawesome/fontawesome-all.js"/>
     </header>
 )
 
