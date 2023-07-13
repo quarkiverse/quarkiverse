@@ -16,7 +16,7 @@ const Logo = styled(props => <a {...props} />)`
   margin-left: 7px;
 `
 
-const PaddedIcon = styled(props => <FontAwesomeIcon {...props}/>)`
+const PaddedIcon = styled(props => <FontAwesomeIcon {...props} width="16px"/>)`
   margin-left: 10px;
   margin-right: 10px;
   height: var(--font-md);
