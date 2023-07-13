@@ -16,9 +16,14 @@ const Logo = styled(props => <a {...props} />)`
   margin-left: 7px;
 `
 
+const PaddedAnchor = styled(props => <a {...props}/>)`
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+`
+
+// Avoid CSS on this class because the css is slow to load, causing flashes
 const PaddedIcon = styled(props => <FontAwesomeIcon {...props} width="16px"/>)`
-  margin-left: 10px;
-  margin-right: 10px;
   height: var(--font-md);
 `
 
@@ -62,10 +67,11 @@ const Header = ({siteTitle, pageName}) => (
         </div>
         <div>
             {pageName &&
-                <a href={`https://github.com/quarkiverse/quarkiverse/edit/main/docs/${pageName}.md`} target="_blank">
+                <PaddedAnchor href={`https://github.com/quarkiverse/quarkiverse/edit/main/docs/${pageName}.md`}
+                              target="_blank">
                     <PaddedIcon icon={faPencil}/>
                     Edit this Page
-                </a>}
+                </PaddedAnchor>}
         </div>
     </header>
 )
