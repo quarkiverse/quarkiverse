@@ -60,10 +60,11 @@ const Header = ({siteTitle, pageName}) => (
             </Link>
         </div>
         <div>
-            <PaddedIcon icon={faPencil}/>
             {pageName &&
-                <a href={`https://github.com/quarkiverse/quarkiverse/edit/main/docs/${pageName}.md`} target="_blank">Edit
-                    this Page</a>}
+                <a href={`https://github.com/quarkiverse/quarkiverse/edit/main/docs/${pageName}.md`} target="_blank">
+                    <PaddedIcon icon={faPencil}/>
+                    Edit this Page
+                </a>}
         </div>
     </header>
 )
