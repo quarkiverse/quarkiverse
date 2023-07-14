@@ -1,8 +1,9 @@
 import * as React from "react"
-import {Link} from "gatsby"
+import {Link, Script} from "gatsby"
 import {StaticImage} from "gatsby-plugin-image";
 import styled from "styled-components";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Not used directly, but fixes size flash
 import {faPencil} from '@fortawesome/free-solid-svg-icons'
 
 const Logo = styled(props => <a {...props} />)`
@@ -15,9 +16,15 @@ const Logo = styled(props => <a {...props} />)`
   margin-left: 7px;
 `
 
-const PaddedIcon = styled(props => <FontAwesomeIcon {...props} />)`
-  margin-left: 10px;
-  margin-right: 10px;
+const PaddedAnchor = styled(props => <a {...props}/>)`
+  display: flex;
+  column-gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+`
+
+// Avoid CSS on this class because the css is slow to load, causing flashes
+const PaddedIcon = styled(props => <FontAwesomeIcon {...props} width="16px"/>)`
   height: var(--font-md);
 `
 
@@ -47,6 +54,7 @@ const Header = ({siteTitle, pageName}) => (
                     src="../images/quarkiverse-logo.png"
                     alt="Quarkiverse logo"
                     height={36}
+                    width={36}
                 />
             </Logo>
             <Link
@@ -60,11 +68,14 @@ const Header = ({siteTitle, pageName}) => (
             </Link>
         </div>
         <div>
-            <PaddedIcon icon={faPencil}/>
             {pageName &&
-                <a href={`https://github.com/quarkiverse/quarkiverse/edit/main/docs/${pageName}.md`} target="_blank">Edit
-                    this Page</a>}
+                <PaddedAnchor href={`https://github.com/quarkiverse/quarkiverse/edit/main/docs/${pageName}.md`}
+                              target="_blank">
+                    <PaddedIcon icon={faPencil}/>
+                    Edit this Page
+                </PaddedAnchor>}
         </div>
+        <Script defer src="/static/fontawesome/fontawesome-all.js"/>
     </header>
 )
 
