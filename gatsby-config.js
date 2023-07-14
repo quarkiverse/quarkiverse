@@ -21,8 +21,14 @@ module.exports = {
                 name: `content`,
                 path: `${__dirname}/docs`,
             },
+        }, {
+            resolve: `gatsby-transformer-remark`,
+            options: {
+                plugins: [
+                    `gatsby-remark-emoji`,
+                ]
+            },
         },
-        `gatsby-transformer-remark`,
         "gatsby-frontmatter-defaults",
         `gatsby-plugin-image`,
         {
