@@ -7,7 +7,7 @@ const HomePage = ({data}) => {
     const {fields, html} = markdownRemark
     return (
         <Layout pageName={fields.pageName}>
-            <h1>{fields.title}</h1>
+            {/*No title here, since it will be 'home'*/}
             <div
                 dangerouslySetInnerHTML={{__html: html}}
             />
