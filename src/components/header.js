@@ -19,6 +19,7 @@ const Logo = styled(props => <a {...props} />)`
 const PaddedAnchor = styled(props => <a {...props}/>)`
   display: flex;
   column-gap: 10px;
+  justify-content: space-between;
   align-items: center;
 `
 
@@ -53,6 +54,7 @@ const Header = ({siteTitle, pageName}) => (
                     src="../images/quarkiverse-logo.png"
                     alt="Quarkiverse logo"
                     height={36}
+                    width={36}
                 />
             </Logo>
             <Link
