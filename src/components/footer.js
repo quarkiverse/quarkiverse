@@ -62,7 +62,7 @@ const LicenseInfo = styled.div`
 `
 
 const PaddedIcon = styled(props => <FontAwesomeIcon {...props} />)`
-  margin-left: 1px;
+  margin-left: 5px;
   margin-right: 1px;
 `
 
