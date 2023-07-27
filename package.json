@@ -28,7 +28,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "jest": "^29.6.2",
-    "jest-environment-jsdom": "^29.6.1",
+    "jest-environment-jsdom": "^29.6.2",
     "jest-puppeteer": "^9.0.0",
     "jest-puppeteer-preset": "^7.0.1",
     "prettier": "^3.0.0",
