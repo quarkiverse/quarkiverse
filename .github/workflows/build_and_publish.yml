@@ -50,7 +50,7 @@ jobs:
       - name: Store PR id
         run: echo ${{ github.event.number }} > ./public/pr-id.txt
       - name: Publishing directory for PR preview
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: site
           path: ./public
