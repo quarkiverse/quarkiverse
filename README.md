@@ -5,7 +5,7 @@ The Quarkiverse GitHub organization provides repository hosting (including build
 This repository serves several functions:
 
 - Host documentation for extension authors who wish to take advantage of the Quarkiverse Hub infrastructure. The docs are available on [this repository's wiki](https://github.com/quarkiverse/quarkiverse/wiki) and at [hub.quarkiverse.io](https://hub.quarkiverse.io).  
-- Host [issues] created by the [ecosystem CI](https://github.com/quarkusio/quarkus-ecosystem-ci#what-its-all-about)
+- Host [issues](https://github.com/quarkiverse/quarkiverse/issues?q=is%3Aopen+is%3Aissue+label%3Atriage%2Fci-quarkiverse%2Ctriage%2Fci-quarkiverse-3) created by the [ecosystem CI](https://github.com/quarkusio/quarkus-ecosystem-ci#what-its-all-about)
 
 ## Onboarding an extension 
 
