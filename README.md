@@ -2,16 +2,29 @@
 
 The Quarkiverse GitHub organization provides repository hosting (including build, CI and release publishing setup) for Quarkus extension projects contributed by the community.
 
-You can browse the [Quarkiverse Wiki](https://github.com/quarkiverse/quarkiverse/wiki) to get more info and also find out how to get an [extension onboarded](https://github.com/quarkiverse/quarkiverse/wiki#getting-an-extension-onboarded).
+This repository serves several functions:
 
-# Run project locally
+- Host documentation for extension authors who wish to take advantage of the Quarkiverse Hub infrastructure. The docs are available on [this repository's wiki](https://github.com/quarkiverse/quarkiverse/wiki) and at [hub.quarkiverse.io](https://hub.quarkiverse.io).  
+- Host [issues] created by the [ecosystem CI](https://github.com/quarkusio/quarkus-ecosystem-ci#what-its-all-about)
 
-Install required dependencies via runing the following CMD
+## Onboarding an extension 
+
+Looking to onboard an extension? Here's the [quick link](https://github.com/quarkiverse/quarkiverse/wiki#getting-an-extension-onboarded). 
+
+## Updating the docs 
+
+The content for the Quarkiverse Hub site lives in [the docs folder](https://github.com/quarkiverse/quarkiverse/tree/main/docs). 
+It is [mirrored](https://github.com/quarkiverse/quarkiverse/blob/main/.github/workflows/wikisync.yml) to [the GitHub wiki](https://github.com/quarkiverse/quarkiverse/wiki), and also [published externally](https://hub.quarkiverse.io) as a Gatsby site. This allows the content to be indexed by search engines, and also enables richer formatting and styling.
+
+### Run project locally
+
+To stand up the Gatsby site locally, install the required dependencies:
 
 ```
 npm install
 ```
-Start development 
+
+Then, to start development:
 
 ```
 npm run develop
