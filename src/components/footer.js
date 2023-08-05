@@ -2,7 +2,7 @@ import * as React from "react"
 import {StaticImage} from "gatsby-plugin-image"
 import styled from "styled-components"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import {faCreativeCommons, faCreativeCommonsBy} from "@fortawesome/free-brands-svg-icons";
+import {faCreativeCommons, faCreativeCommonsBy, faGithub} from "@fortawesome/free-brands-svg-icons";
 
 const FooterBar = styled.footer`
   height: 64px;
@@ -16,10 +16,6 @@ const FooterBar = styled.footer`
   padding-left: var(--site-margins);
   padding-right: var(--site-margins);
   font-weight: var(--font-weight-normal);
-`
-
-const Spacer = styled.div`
-  width: 190px;
 `
 
 const Logo = styled(props => <a {...props} />)`
@@ -43,7 +39,6 @@ const SponsorInfo = styled.div`
 
 const LicenseText = styled(props => <a {...props} />)`
   margin: 8px;
-
   &:visited {
     color: var(--white);
     text-decoration: underline;
@@ -65,18 +60,29 @@ const PaddedIcon = styled(props => <FontAwesomeIcon {...props} />)`
   margin-left: 1px;
   margin-right: 1px;
 `
+const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
+  margin-left: 5px; 
+
+`;
+
+const AnchorLink = styled.a`
+  margin: 8px;
+  color: #ffff;
+
+`;
 
 const Footer = () => {
     return (
-        <FooterBar className="navigation">
-            <Spacer/>
+      <FooterBar className="navigation">
+         <AnchorLink href="https://github.com/quarkiverse/quarkiverse" target="_blank" rel="noreferrer" >Contribute
+          <StyledFontAwesomeIcon icon={faGithub} /></AnchorLink>
             <LicenseInfo>
                 <PaddedIcon icon={faCreativeCommons}/>
                 <PaddedIcon icon={faCreativeCommonsBy}/>
                 <LicenseText href="https://creativecommons.org/licenses/by/3.0/">
                     CC by 3.0
                 </LicenseText>
-            </LicenseInfo>
+              </LicenseInfo>
             <SponsorInfo>
                 Sponsored by
                 <Logo href="https://www.redhat.com/">
