@@ -18,7 +18,7 @@ It is [mirrored](https://github.com/quarkiverse/quarkiverse/blob/main/.github/wo
 
 ### Run project locally
 
-To stand up the Gatsby site locally, install the required dependencies:
+To stand up the Gatsby site locally, work in the `site` directory. First, install the required dependencies:
 
 ```
 npm install
