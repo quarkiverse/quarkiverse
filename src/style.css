@@ -1,0 +1,116 @@
+/*
+  This will be available everywhere,
+  because every element is a descendant of
+  the HTML tag:
+*/
+html {
+    --black: #000000;
+    --white: #FFFFFF;
+
+    --quarkus-blue: #4695EB;
+    --dark-blue: #09131E;
+    --dark-blue-alt: #0D1C2C;
+    --dark-blue-1: #205894;
+
+    --link: #1259A5;
+    --link-dark-bg: #9BCAFA;
+    --link-light-bg: #1259A5;
+    --link-hover: --red;
+    --link-visited: #AA4494;
+
+    --cta-hover: var(--link-hover);
+
+    --soft-yellow: #FDE9BF;
+    --orange: #E37B40;
+    --light-blue: #e4edf7;
+    --red: #FF004A;
+    --dark-red: #cc0000;
+    --cta-blue: #0B58AB;
+
+    --grey-0: #EFEFEF;
+    --grey-1: #AAAAAA;
+    --grey-2: #555555;
+    --grey-3: #333333;
+    --grey-4: #222222;
+    --dark-grey: #4C4C4C;
+    --light-grey: #DCDCDC;
+
+
+    /* Fonts */
+    --font-family-open-sans: "Open Sans", sans-serif;
+    --font-family-fontawesome: FontAwesome;
+    --font-family-pt-mono: "PT Mono";
+
+    --font-style-normal: normal;
+
+    --font-weight-normal: 300;
+    /* Cannot go lighter than this with open sans */
+    --font-weight-bold: 400;
+    --font-weight-awfully-bold: 600;
+    --font-weight-boldest: 700;
+
+    font-family: var(--font-family-open-sans);
+
+    --font-size-10: 10px;
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-18: 18px;
+    --font-size-20: 20px;
+    --font-size-22: 22px;
+    --font-size-24: 24px;
+    --font-size-28: 28px;
+    --font-size-32: 32px;
+    --font-size-48: 48px;
+    --font-size-56: 56px;
+    --font-size-72: 72px;
+
+    /** Spacing **/
+
+    --line-height-multiplier: 1.2; /* multiplier for making calculations easier */
+
+    --site-margins: 13rem;
+    --navbar-padding: 1rem;
+    --logo-width: 13rem;
+
+    --a-generous-space: 100px;
+    --a-modest-space: 20px;
+    --a-small-space: 12px;
+    --a-vsmall-space: 10px;
+
+    --border-radius: 10px;
+
+    font-weight: var(--font-weight-normal);
+}
+
+/** Adjustments for small screens  */
+@media screen and (max-width: 1170px) {
+    html {
+        --site-margins: 6rem;
+        --navbar-padding: 1.5rem;
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        --site-margins: 2rem;
+        --logo-width: 8rem;
+    }
+}
+
+:link {
+    text-decoration: none;
+}
+
+:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
