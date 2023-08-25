@@ -1,0 +1,6 @@
+# This file is to record opt-ins for companies and organisations to be listed as sponsors and contributors on extension pages
+# See https://quarkus.io/extensions/io.quarkus/quarkus-resteasy-reactive for an example of what is shown
+
+# Including a company in this list should be done (or approved) by someone from that company
+named-sponsors:
+  - Red Hat
