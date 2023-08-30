@@ -9,9 +9,7 @@ import {faPencil} from '@fortawesome/free-solid-svg-icons'
 const Logo = styled(props => <a {...props} />)`
   background-color: var(--black);
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   font-weight: var(--font-weight-bold);
   margin-left: 7px;
 `
@@ -19,7 +17,6 @@ const Logo = styled(props => <a {...props} />)`
 const PaddedAnchor = styled(props => <a {...props}/>)`
   display: flex;
   column-gap: 10px;
-  justify-content: space-between;
   align-items: center;
 `
 
