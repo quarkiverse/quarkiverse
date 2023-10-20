@@ -36,6 +36,11 @@ In order to have your [extension documentation](https://github.com/quarkiverse/q
 
 Create a `YAML` file with your extension's `group-id` and `artifact-id` in the [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions)  
 
+## [Allow your company to be named as a sponsor or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
+
+If you would like your company to be listed as a contributor or sponsor of the extension, register an opt in in the 
+ opt-in file in the [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/blob/main/named-contributing-orgs-opt-in.yml).  
+
 # When your extension is ready
 
 ## [Release your extension](https://github.com/quarkiverse/quarkiverse/wiki/Release) 
