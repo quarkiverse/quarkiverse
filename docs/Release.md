@@ -7,7 +7,6 @@ To perform a release, one must provide a Pull-request changing the `current-vers
 
 Example: 
 ```yaml
-name: Quarkiverse Parent
 release:
   current-version: "2"
   next-version: "999-SNAPSHOT"    
