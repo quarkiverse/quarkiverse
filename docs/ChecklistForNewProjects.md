@@ -12,6 +12,22 @@ Once the lead maintainers are identified (their GitHub accounts), a pull-request
 |----------------------------|
 If you need to change any setting in the repository (give push permissions to anyone, enable a GitHub app, etc.), make sure you perform these changes in the repository's `.tf` file. Changes performed in the GitHub UI directly can be discarded at any time without notice.   
 
+# Start coding 
+
+When decided, the Quarkiverse Team will initialize the repository in the Quarkiverse organization for you with skeleton code ready. If you'd like to get started before then, you can start implementing your extension from a skeleton with this command:
+```shell
+mvn io.quarkus.platform:quarkus-maven-plugin:create-extension \
+ -DgroupId=io.quarkiverse.[myext] -DextensionId=[my-ext] -U
+```
+
+It's best not to create a Git repository, since migration of an existing repository into the Quarkiverse org can be complex. 
+
+## Set up your IDE's code format 
+
+## Code format
+
+Extensions generated with the `create-extension` goal of the Quarkus maven plugin expect code to be formatted according to the Quarkus conventions as documented in: https://github.com/quarkusio/quarkus/blob/master/CONTRIBUTING.md#ide-config-and-code-style. The default CI setup will validate the format and fail your build if the files don't conform.
+
 # After the repository is created
 
 ## [Integrate with the Quarkus Ecosystem CI](https://github.com/quarkusio/quarkus-ecosystem-ci#what-its-all-about)
@@ -43,6 +59,6 @@ If you would like your company to be listed as a contributor or sponsor of the e
 
 # When your extension is ready
 
-## [Release your extension](https://github.com/quarkiverse/quarkiverse/wiki/Release) 
+## [Release your extension](/Release) 
 
-When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](https://github.com/quarkiverse/quarkiverse/wiki/Release) to Maven central
+When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](/Release) to Maven central
