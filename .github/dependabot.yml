@@ -13,5 +13,10 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+    groups:
+      # upload-artifact and download-artifact may fail if not updated together
+      artifact-transfer:
+        patterns:
+          - "*-artifact"
     labels:
       - website
