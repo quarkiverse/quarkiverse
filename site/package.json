@@ -30,9 +30,10 @@
     "@testing-library/jest-dom": "^6.1.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.6.4",
-    "jest-puppeteer": "^9.0.0",
+    "jest-puppeteer": "10.1",
     "jest-puppeteer-preset": "^7.0.1",
     "prettier": "^3.0.2",
+    "puppeteer": "^23.2.1",
     "yaml-jest": "^1.2.0"
   },
   "keywords": [
