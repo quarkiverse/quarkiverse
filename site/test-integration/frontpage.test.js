@@ -11,7 +11,7 @@ describe("main site", () => {
 
     it("should have an release heading on it somewhere", async () => {
         await expect(
-            page.waitForXPath(`//*[text()="Release"]`)
+            page.waitForSelector(`xpath///*[text()="Release"]`)
         ).resolves.toBeTruthy()
     })
 })
