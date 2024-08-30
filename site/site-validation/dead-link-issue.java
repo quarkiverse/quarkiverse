@@ -50,7 +50,7 @@ class Report implements Runnable {
     // We can't use a label because we may not have the right privileges in the repo we're
     // raising an issue in
     private static final String EYECATCHER = "QuarkusExtensionsDeadLinkHelper";
-    public static final String OUTPUT_PATH = "dead-link-check-results.json";
+    public static final String OUTPUT_PATH = "site/dead-link-check-results.json";
     @Option(names = "token", description = "Github token to use when calling the Github API")
     private String token;
 
