@@ -7,6 +7,7 @@ const promiseRetry = require("promise-retry")
 const fs = require("fs/promises")
 const config = require("../gatsby-config.js")
 const {port} = require("../jest-puppeteer.config").server
+
 const pathPrefix = process.env.PATH_PREFIX || ""
 
 describe("site external links", () => {
@@ -25,6 +26,7 @@ describe("site external links", () => {
 
         // After a page is scanned, check out the results!
         checker.on("link", async result => {
+            console.log("Checking", result.url, "->", result.state, " on ", result.parent)
             if (result.state === "BROKEN") {
                 // Don't stress about 403s from vimeo because humans can get past the paywall fairly easily and we want to have the link
                 const isPaywalled =
