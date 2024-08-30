@@ -26,7 +26,6 @@ describe("site external links", () => {
 
         // After a page is scanned, check out the results!
         checker.on("link", async result => {
-            console.log("Checking", result.url, "->", result.state, " on ", result.parent)
             if (result.state === "BROKEN") {
                 // Don't stress about 403s from vimeo because humans can get past the paywall fairly easily and we want to have the link
                 const isPaywalled =
