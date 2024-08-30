@@ -77,7 +77,7 @@ jobs:
   check-external-links:
     # Only check external links on merged code
     if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
-    needs: [ unit-test, build ]
+    needs: [ build ]
     runs-on: ubuntu-latest
     permissions:
       issues: write
