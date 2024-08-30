@@ -76,7 +76,6 @@ jobs:
           folder: site # The folder the action should deploy.
   check-external-links:
     # Only check external links on merged code
-    if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
     needs: [ build ]
     runs-on: ubuntu-latest
     permissions:
@@ -102,6 +101,7 @@ jobs:
           PATH_PREFIX_FLAG: "${{ github.ref_name == 'main' && '--prefix-paths' || '' }}"
       - name: Raise defects if needed
         uses: jbangdev/jbang-action@v0.111.0
+        if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
         with:
           script: site/site-validation/dead-link-issue.java
           scriptargs: token=${{ secrets.GITHUB_TOKEN }} issueRepo=${{ github.repository }}  runId=${{ github.run_id }} siteUrl=https://hub.quarkus.io/
