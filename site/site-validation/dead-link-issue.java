@@ -76,6 +76,7 @@ class Report implements Runnable {
 
             List<DeadLink> links = readTestOutputFile();
             System.out.println("Processing " + links.size() + " dead links.");
+            System.out.println("Will use repository " + issueRepo);
 
             links.forEach(link -> processDeadLink(github, link));
 
@@ -195,6 +196,7 @@ class Report implements Runnable {
         Path filePath = FileSystems.getDefault()
                 .getPath(OUTPUT_PATH);
         if (Files.exists(filePath)) {
+            System.out.println("Reading " + filePath.toAbsolutePath().normalize());
             return Files.lines(filePath)
                     .map(line -> {
                         try {
@@ -205,6 +207,7 @@ class Report implements Runnable {
                     })
                     .toList();
         } else {
+            System.out.println("Could not find " + filePath.toAbsolutePath().normalize());
             return Collections.emptyList();
         }
     }
