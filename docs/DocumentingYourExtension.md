@@ -1,5 +1,3 @@
-# Documenting your extension
-
 ## Using Antora 
 
 The Quarkiverse extension template includes skeleton documentation. 
