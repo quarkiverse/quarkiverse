@@ -97,8 +97,6 @@ jobs:
         continue-on-error: true # problems will be tracked by defects raised by the next job, not by build failures
         env:
           CI: true
-          PATH_PREFIX: "${{ github.ref_name == 'main' && 'quarkiverse' || '' }}"
-          PATH_PREFIX_FLAG: "${{ github.ref_name == 'main' && '--prefix-paths' || '' }}"
       - name: Raise defects if needed
         uses: jbangdev/jbang-action@v0.111.0
         if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
