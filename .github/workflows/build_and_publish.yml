@@ -88,7 +88,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: "npm" # this only caches global dependencies
       - run: npm ci --prefer-offline
       - name: Download Built Artifact
         uses: actions/download-artifact@v4
