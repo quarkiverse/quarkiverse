@@ -49,7 +49,7 @@ class Report implements Runnable {
     // are split.
     // We can't use a label because we may not have the right privileges in the repo we're
     // raising an issue in
-    private static final String EYECATCHER = "QuarkusExtensionsDeadLinkHelper";
+    private static final String EYECATCHER = "QuarkiverseHubDeadLinkHelper";
     public static final String OUTPUT_PATH = "site/dead-link-check-results.json";
     @Option(names = "token", description = "Github token to use when calling the Github API")
     private String token;
@@ -88,7 +88,7 @@ class Report implements Runnable {
     }
 
     private void closeResolvedIssues(GitHub github, List<DeadLink> links) throws IOException {
-        String term = String.format("is:issue is:open %s in:body", EYECATCHER);
+        String term = String.format("is:issue is:open %s in:body repo:%s", EYECATCHER, issueRepo);
         PagedSearchIterable<GHIssue> answer = github.searchIssues()
                 .q(term)
                 .list();
