@@ -74,3 +74,34 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: site # The folder the action should deploy.
+  check-external-links:
+    # Only check external links on merged code
+    if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      repository-projects: read
+      statuses: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: "npm" # this only caches global dependencies
+      - run: npm ci --prefer-offline
+      - name: Download Built Artifact
+        uses: actions/download-artifact@v4
+        with:
+          path: public/
+          name: site
+      - run: npm run test:links
+        continue-on-error: true # problems will be tracked by defects raised by the next job, not by build failures
+        env:
+          CI: true
+          PATH_PREFIX: "${{ github.ref_name == 'main' && 'quarkiverse' || '' }}"
+          PATH_PREFIX_FLAG: "${{ github.ref_name == 'main' && '--prefix-paths' || '' }}"
+      - name: Raise defects if needed
+        uses: jbangdev/jbang-action@v0.111.0
+        with:
+          script: site-validation/dead-link-issue.java
+          scriptargs: token=${{ secrets.GITHUB_TOKEN }} issueRepo=${{ github.repository }}  runId=${{ github.run_id }} siteUrl=https://hub.quarkus.io/
