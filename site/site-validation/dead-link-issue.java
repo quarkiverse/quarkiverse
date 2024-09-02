@@ -189,7 +189,7 @@ class Report implements Runnable {
     }
 
     private String getOwningPage(DeadLink link) {
-        return link.owningPage.replace("http://localhost:9000/quarkiverse", siteUrl);
+        return link.owningPage.replace("http://localhost:9000/", siteUrl);
     }
 
     private List<DeadLink> readTestOutputFile() throws IOException {
