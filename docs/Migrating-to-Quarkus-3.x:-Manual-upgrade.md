@@ -7,7 +7,7 @@ But please take the time to report the issues you experienced to the Quarkus tea
 
 Update the Quarkus dependencies in your pom.xml to depend on the latest 3.x  Quarkus. You can either
 
-- use the nightly snapshot, following the [instructions for using snapshots](https://github.com/quarkusio/quarkus/tree/main/jakarta#using-snapshots) 
+- use the nightly snapshot, following the [instructions for using snapshots](https://github.com/quarkusio/quarkus/blob/main/CONTRIBUTING.md#using-snapshots) 
 - depend on the latest release 3.0.x release
 
 Using the release is recommended unless you need something in the snapshots.
