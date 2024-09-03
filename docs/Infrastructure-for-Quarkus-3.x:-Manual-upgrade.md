@@ -1,4 +1,7 @@
-:warning: First have a look at the automated process described [here](https://github.com/quarkiverse/quarkiverse/wiki/Migrating-to-Quarkus-3.x), using the manual upgrade should be last resort.
+This guide is intended for Quarkiverse extension owners who wish to test against early versions of Quarkus 3.0, before its release.
+For normal extension migration, see the Quarkus migration guides.
+
+:warning: First have a look at the automated process described [here](https://github.com/quarkiverse/quarkiverse/wiki/Infrastructure-Quarkus-3.x), using the manual upgrade should be last resort.
 
 If you’re not able to use the automation or some step is missed, you can manually move to the latest dependencies and patch up the code manually.
 But please take the time to report the issues you experienced to the Quarkus team so that they can improve the upgrade script appropriately.
