@@ -1,29 +1,12 @@
+This guide is describes infrastructure change owners of extensions hosted in the Quarkiverse should make in preparation for major release updates.
+For normal extension migration, see the Quarkus migration guides.
+
 # What’s changing
 
 [Quarkus 3 is on the way](https://quarkus.io/blog/road-to-quarkus-3/), and it has breaking changes. 
 These changes will affect extensions, so extension maintainers should be prepared.
 
 Don't worry, we have a script that automates most (if not all) of the migration that works for applications... and extensions.
-
-# Known breakers
-
-## Jakarta EE 10 [released now]
-
-Quarkus is moving to use Jakarta EE 10 APIs instead of Jakarta EE 8 ones.
-In most cases the functionality isn’t different, but package names are.
-
-## Hibernate ORM 5 to 6 [released now]
-
-Quarkus 3 ships with Hibernate ORM 6 instead of Hibernate ORM 5. This is a major release, and so there are some breaking changes, especially if your extension uses the Criteria API. We don’t expect that many extensions rely on these, but in case you do, the Hibernate team have published a [full migration guide](https://github.com/quarkusio/quarkus/wiki/Migration-Guide-3.0:-Hibernate-ORM-5-to-6-migration).
-
-## Flow, instead of reactive streams [released now]
-
-Quarkus 3 uses the JDK Flow API introduced since Java 9 instead of the legacy Reactive Streams API.
-For a discussion of what changes were needed within Quarkus itself, see
-- https://groups.google.com/g/quarkus-dev/c/RpeqFv1dr8k
-- https://github.com/quarkusio/quarkus/issues/26675
-
-If your extension needs to use a library that is still using the legacy Reactive Streams API then you should use the adapters from the Mutiny Zero project (see https://smallrye.io/smallrye-mutiny-zero).
 
 # Are you affected?
 
