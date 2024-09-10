@@ -59,6 +59,6 @@ If you would like your company to be listed as a contributor or sponsor of the e
 
 # When your extension is ready
 
-## [Release your extension](/Release) 
+## [Release your extension](Release) 
 
-When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](/Release) to Maven central
+When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](Release) to Maven central
