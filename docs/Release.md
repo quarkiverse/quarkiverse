@@ -8,7 +8,7 @@ To perform a release, one must provide a Pull-request changing the `current-vers
 Example: 
 ```yaml
 release:
-  current-version: "2"
+  current-version: "1.0.1"
   next-version: "999-SNAPSHOT"    
 ```
 
