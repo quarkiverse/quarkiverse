@@ -50,7 +50,10 @@ In order to have your [extension documentation](https://github.com/quarkiverse/q
 
 ## [Make your extension available in the tooling](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
 
-Create a `YAML` file with your extension's `group-id` and `artifact-id` in the [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions)  
+Most Quarkus extensions are listed in the [Quarkus community extension registry](https://quarkus.io/guides/extension-registry-user#registry.quarkus.io).
+Once extensions are included in the registry, they will automatically be available on [code.quarkus.io](https://code.quarkus.io), [extensions.quarkus.io](https://extensions.quarkus.io), and in the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). 
+
+The community registry reads its contents from [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). To add your extension to catalog, create a `YAML` file with your extension's `group-id` and `artifact-id` in the [extensions directory of the quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). 
 
 ## [Allow your company to be named as a sponsor or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
 

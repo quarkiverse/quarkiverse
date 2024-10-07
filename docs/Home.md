@@ -18,7 +18,6 @@ The advantages of joining Quarkiverse are:
 
 - Automated and secured publishing of your maven releases to Maven Central.
 - Automated Cross-testing of your extension with Quarkus builds/releases (see https://github.com/quarkusio/quarkus-ecosystem-ci)
-- Inclusion in registry used by Quarkus tooling to browse extensions (i.e. code.quarkus, command line and IDE tools).
 - Consistent formatting and release of project
 - Quarkus team members can in an emergency (i.e. maintainers are missing) help and fix issues.
 
@@ -47,6 +46,13 @@ The Quarkiverse team will provide the repository ready for development, neverthe
 
 All Quarkiverse extensions can include documentation on http://docs.quarkiverse.io. 
 See the [documentation about the documentation](documentingyourextension) for details on how how to document your extension.
+
+## Managing settings on the GitHub repository
+
+Extension maintainers have full control over the repository settings, but be aware that the settings are infrastructure as code, managed with Terraform. 
+To change any setting in the repository (give push permissions to anyone, enable a GitHub app, etc.), update the repository's `.tf` file. 
+You may notice that, even as an extension maintainer, you have restricted permissions in the GitHub UI. 
+This is to reduce the risk of accidents where maintainers make changes which then get overwritten by the next Terraform run.  
 
 ## Expectations for Quarkiverse projects 
 
