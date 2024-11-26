@@ -37,7 +37,7 @@
     "jest-puppeteer-preset": "^7.0.1",
     "linkinator": "^6.1.1",
     "node-libcurl": "^4.0.0",
-    "prettier": "^3.0.2",
+    "prettier": "^3.4.0",
     "promise-retry": "^2.0.1",
     "puppeteer": "^23.2.1",
     "yaml-jest": "^1.2.0"
