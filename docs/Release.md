@@ -15,7 +15,7 @@ release:
 * current-version: The released version
 * next-version: The next development version
 
-Once the pull-request is merged, the `release.yml` workflow is triggered, which will push the generated tags once the process is complete and deploy the released version to Sonatype Nexus. 
+Once the pull-request is merged, the Release workflow is triggered, which will push the generated tags once the process is complete and deploy the released version to Sonatype Nexus. 
 
 ### IMPORTANT
 **The Pull Request needs to come from a branch in the origin repository.** Right now, for security reasons, secrets are not propagated to forks, even for Pull Requests opened to the original repository (https://github.community/t5/GitHub-Actions/Github-Workflow-not-running-from-pull-request-from-forked/m-p/33547/highlight/true#M1555)
