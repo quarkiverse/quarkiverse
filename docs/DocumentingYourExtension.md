@@ -5,6 +5,24 @@ These docs use [Asciidoctor](https://asciidoctor.org/) for content, and [Antora]
 To get started creating your documentation, update the `docs/modules/ROOT/pages/index.adoc` in your project.
 If your extension grows more complex and you need multiple pages, add them to `docs/modules/ROOT/nav.adoc`.
 
+If you would like to sync the README page content of the GitHub repository of the extension, here are the steps to follow
+to merge the content:
+
+- Convert the root README.md to a README.adoc file manually or using an online tool like: https://github.com/dohliam/markdoctor
+- Replace within the README.adoc file the root `#` level to `##` to avoid the `booctype` asciidoctor error. This step is optional as asciidoctor proposes such the following option to downgrade the levels if needed - https://docs.asciidoctor.org/asciidoc/latest/directives/include-with-leveloffset/#manipulate-heading-levels-with-leveloffset
+- Add to the `maven-resources-plugin` of the docs project a new resource to be copied
+
+<resource>
+    <directory>${project.basedir}/../</directory>
+    <include>README.adoc</include>
+    <filtering>false</filtering>
+</resource>
+
+- Define a new section part of the `index.Adoc` file to include the README.adoc file
+```
+include::./includes/README.adoc[]
+```
+
 ## Samples 
 
 Code samples can be put in the `docs/modules/ROOT/examples` folder, and imported into the main documentation with [an `::include` directive](https://docs.asciidoctor.org/asciidoc/latest/directives/include/).
