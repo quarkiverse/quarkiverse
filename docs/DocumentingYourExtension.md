@@ -22,6 +22,12 @@ to merge the content:
 ```
 include::./includes/README.adoc[]
 ```
+To generate locally the documentation of an extension as a site, you can add the quarkus-antora extension: https://github.com/quarkiverse/quarkus-antora to your project using the following steps: 
+
+- Add the extension to the pom.xml file of the `docs` module
+- Start `mvn package quarkus:dev`
+- When DevServices is launched, type `w` within the terminal and the generated site will appear within your browser
+- As bonus as `Live Reload` is supported, then you can change the text of the documentation under `modules/ROOT` and hit `F5`.
 
 ## Samples 
 
