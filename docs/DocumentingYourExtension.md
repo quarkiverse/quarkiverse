@@ -12,11 +12,13 @@ to merge the content:
 - Replace within the README.adoc file the root `#` level to `##` to avoid the `booctype` asciidoctor error. This step is optional as asciidoctor proposes such the following option to downgrade the levels if needed - https://docs.asciidoctor.org/asciidoc/latest/directives/include-with-leveloffset/#manipulate-heading-levels-with-leveloffset
 - Add to the `maven-resources-plugin` of the docs project a new resource to be copied
 
-<resource>
-    <directory>${project.basedir}/../</directory>
-    <include>README.adoc</include>
-    <filtering>false</filtering>
-</resource>
+    ```
+    <resource>
+        <directory>${project.basedir}/../</directory>
+        <include>README.adoc</include>
+        <filtering>false</filtering>
+    </resource>
+    ```
 
 - Define a new section part of the `index.Adoc` file to include the README.adoc file
 ```
