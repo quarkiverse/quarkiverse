@@ -66,3 +66,9 @@ JRELEASER_MAVENCENTRAL_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
 JRELEASER_NEXUS2_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
 JRELEASER_NEXUS2_TOKEN: ${{ secrets.SONATYPE_PASSWORD }}
 ```
+
+## Migrate the namespace 
+
+IMPORTANT:: Once you migrate the namespace, you can't deploy in `s01.oss.sonatype.org` anymore, so make sure your release scripts are updated before proceeding.
+
+Now you are ready to migrate the namespace. Go to https://central.sonatype.com/publishing/namespaces and click `Migrate this namespace` for your group ID. It should show you a popup asking for confirmation and then it will be migrated. 
