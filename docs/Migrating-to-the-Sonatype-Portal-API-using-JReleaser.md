@@ -56,6 +56,7 @@ deploy:
 
 > Note that there are two deployers. This is because SNAPSHOTS are deployed differently and still use the Nexus 2 deployer.
 
+### Set the environment variables
 
 Make sure you have the environment variables set in your release workflow:
 
