@@ -2,8 +2,38 @@
 
 The Quarkiverse extension template includes skeleton documentation. 
 These docs use [Asciidoctor](https://asciidoctor.org/) for content, and [Antora](https://antora.org/) for navigation.
+
 To get started creating your documentation, update the `docs/modules/ROOT/pages/index.adoc` in your project.
 If your extension grows more complex and you need multiple pages, add them to `docs/modules/ROOT/nav.adoc`.
+
+## Preview documentation using asciidoc
+
+By default you can run `mvn package` and docs will be rendered using asciidoc into `target/generated-docs/index.html`
+
+You will get similar in most IDE's like visual studio code or Intellij IDEA.
+
+## Samples 
+
+Code samples can be put in the `docs/modules/ROOT/examples` folder, and imported into the main documentation with [an `::include` directive](https://docs.asciidoctor.org/asciidoc/latest/directives/include/).
+Properties in `docs/templates/includes/attributes.adoc` will be resolved and copied into `docs/modules/ROOT/pages/includes/attributes.adoc` by the Maven resources plugin each build.
+
+## Quarkiverse docs hosting 
+
+Consider adding documentation to the [Quarkiverse docs page](https://docs.quarkiverse.io/). 
+The Quarkiverse Hub uses [Antora](https://antora.org/) to aggregate each extension's documentation in the Quarkiverse docs website. 
+To register your extension's documentation, open a PR including it in the [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml)
+
+## Quarkus Antora for "live edit"
+
+To generate locally the documentation of an extension as a site, you can add the quarkus-antora extension: https://github.com/quarkiverse/quarkus-antora to your project using the following steps: 
+
+- Add the extension to the pom.xml file of the `docs` module
+- Start `mvn package quarkus:dev`
+- When DevServices is launched, type `w` within the terminal and the generated site will appear within your browser
+- As bonus as `Live Reload` is supported, then you can change the text of the documentation under `modules/ROOT` and hit `F5`.
+
+
+## Sync readme for extension
 
 If you would like to sync the README page content of the GitHub repository of the extension, here are the steps to follow
 to merge the content:
@@ -24,23 +54,7 @@ to merge the content:
 ```
 include::./includes/README.adoc[]
 ```
-To generate locally the documentation of an extension as a site, you can add the quarkus-antora extension: https://github.com/quarkiverse/quarkus-antora to your project using the following steps: 
 
-- Add the extension to the pom.xml file of the `docs` module
-- Start `mvn package quarkus:dev`
-- When DevServices is launched, type `w` within the terminal and the generated site will appear within your browser
-- As bonus as `Live Reload` is supported, then you can change the text of the documentation under `modules/ROOT` and hit `F5`.
-
-## Samples 
-
-Code samples can be put in the `docs/modules/ROOT/examples` folder, and imported into the main documentation with [an `::include` directive](https://docs.asciidoctor.org/asciidoc/latest/directives/include/).
-Properties in `docs/templates/includes/attributes.adoc` will be resolved and copied into `docs/modules/ROOT/pages/includes/attributes.adoc` by the Maven resources plugin each build.
-
-## Quarkiverse docs hosting 
-
-Consider adding documentation to the [Quarkiverse docs page](https://docs.quarkiverse.io/). 
-The Quarkiverse Hub uses [Antora](https://antora.org/) to aggregate each extension's documentation in the Quarkiverse docs website. 
-To register your extension's documentation, open a PR including it in the [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml)
 
 ## Migration to Quarkus 3.14
 
