@@ -45,6 +45,8 @@ jobs:
           GATSBY_ACTIVE_ENV: production
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PREFIX_PATHS: true
+      - name: Disable AppArmor // Needed on ubunti 23+, see https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md
+        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
       - run: npm run test:int
         env:
           CI: true
