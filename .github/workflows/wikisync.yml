@@ -21,7 +21,7 @@ jobs:
         if: github.event_name != 'gollum'
         steps:
           - name: Checkout Repo
-            uses: actions/checkout@v4
+            uses: actions/checkout@v5
           - name: Sync docs to wiki
             uses: newrelic/wiki-sync-action@v1.0.1
             with:
@@ -36,7 +36,7 @@ jobs:
         if: github.event_name == 'gollum'
         steps:
             - name: Checkout Repo
-              uses: actions/checkout@v4
+              uses: actions/checkout@v5
               with:
                 token: ${{ secrets.WIKI_PAT }} # allows us to push back to repo
                 ref: main
