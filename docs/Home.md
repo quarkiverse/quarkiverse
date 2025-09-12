@@ -38,7 +38,7 @@ While the extensions under the Quarkiverse organization are generally independen
 
 ## Getting an extension onboarded:
 
-See [ChecklistForNewProjects](checklistfornewprojects) for all the steps you'll need to start a new project in the Quarkiverse org.
+See [ChecklistForNewProjects](checklist-for-new-projects) for all the steps you'll need to start a new project in the Quarkiverse org.
 
 The Quarkiverse team will provide the repository ready for development, nevertheless, it is always good to know that we respect the following conventions and policies. 
 
