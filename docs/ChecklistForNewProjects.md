@@ -55,9 +55,9 @@ Once extensions are included in the registry, they will automatically be availab
 
 The community registry reads its contents from [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). To add your extension to catalog, create a `YAML` file with your extension's `group-id` and `artifact-id` in the [extensions directory of the quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). 
 
-## [Allow your company to be named as a sponsor or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
+## [Allow your company to be named as a maintainer or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
 
-If you would like your company to be listed as a contributor or sponsor of the extension, register an opt in in the 
+If you would like your company to be listed as a contributor or maintainer of the extension, register an opt in in the 
  opt-in file in the [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/blob/main/named-contributing-orgs-opt-in.yml).  
 
 # When your extension is ready
