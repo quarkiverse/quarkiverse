@@ -30,11 +30,23 @@ Extensions generated with the `create-extension` goal of the Quarkus maven plugi
 
 # After the repository is created
 
+## [Make your extension available in the tooling](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
+
+Most Quarkus extensions are listed in the [Quarkus community extension registry](https://quarkus.io/guides/extension-registry-user#registry.quarkus.io).
+Once extensions are included in the registry, they will automatically be available on [code.quarkus.io](https://code.quarkus.io), [extensions.quarkus.io](https://extensions.quarkus.io), and in the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). 
+
+The community registry reads its contents from [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). To add your extension to catalog, create a `YAML` file with your extension's `group-id` and `artifact-id` in the [extensions directory of the quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). 
+
+## [Allow your company to be named as a maintainer or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
+
+If you would like your company to be listed as a contributor or maintainer of the extension, register an opt in in the 
+ opt-in file in the [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/blob/main/named-contributing-orgs-opt-in.yml).  
+
 ## [Integrate with the Quarkus Ecosystem CI](https://github.com/quarkusio/quarkus-ecosystem-ci#what-its-all-about)
 
 If you wish to have your extension tested against the latest snapshot in Quarkus core, you need to register your extension in the Quarkus Ecosystem CI
 
-1. Create an [Ecosystem CI issue](https://github.com/quarkiverse/quarkiverse/issues/new/choose) and assign to the extension lead 
+1. Create an [Ecosystem CI issue](https://github.com/quarkiverse/quarkiverse/issues/new/choose) and assign to the extension lead
 2. In the [Ecosystem CI repository](https://github.com/quarkusio/quarkus-ecosystem-ci), create a `info.yaml` file in a `quarkiverse-<YOUR_EXTENSION>` directory with the following contents:
 
 ```yaml
@@ -48,20 +60,8 @@ issues:
 
 In order to have your [extension documentation](https://github.com/quarkiverse/quarkiverse/wiki#documenting-your-extension) listed in the [Quarkiverse Documentation website](https://quarkiverse.github.io/quarkiverse-docs/), open a PR including it in the [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml)
 
-## [Make your extension available in the tooling](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
-
-Most Quarkus extensions are listed in the [Quarkus community extension registry](https://quarkus.io/guides/extension-registry-user#registry.quarkus.io).
-Once extensions are included in the registry, they will automatically be available on [code.quarkus.io](https://code.quarkus.io), [extensions.quarkus.io](https://extensions.quarkus.io), and in the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). 
-
-The community registry reads its contents from [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). To add your extension to catalog, create a `YAML` file with your extension's `group-id` and `artifact-id` in the [extensions directory of the quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). 
-
-## [Allow your company to be named as a maintainer or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
-
-If you would like your company to be listed as a contributor or maintainer of the extension, register an opt in in the 
- opt-in file in the [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/blob/main/named-contributing-orgs-opt-in.yml).  
-
 # When your extension is ready
 
 ## [Release your extension](Release) 
 
-When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](/Release) to Maven central
+When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](/release) to Maven central
