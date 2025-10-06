@@ -20,8 +20,6 @@ Once the pull-request is merged, the Release workflow is triggered, which will p
 ### IMPORTANT
 **The Pull Request needs to come from a branch in the origin repository.** Right now, for security reasons, secrets are not propagated to forks, even for Pull Requests opened to the original repository (https://github.community/t5/GitHub-Actions/Github-Workflow-not-running-from-pull-request-from-forked/m-p/33547/highlight/true#M1555)
 
-After the release is performed, [create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release), so projects using your extension may know what have been changed when dependabot kicks in.
-
 ## FAQ
 
 ### Release fails while deploying the integration tests and docs
