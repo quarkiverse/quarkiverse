@@ -30,7 +30,7 @@ To generate locally the documentation of an extension as a site, you can add the
 - Add the extension to the pom.xml file of the `docs` module
 - Start `mvn package quarkus:dev`
 - When DevServices is launched, type `w` within the terminal and the generated site will appear within your browser
-- As bonus, since `Live Reload` is supported, you can change the text of the documentation under `modules/ROOT` and hit `F5`.
+- Asa  bonus, since `Live Reload` is supported, you can change the text of the documentation under `modules/ROOT` and hit `F5`.
 
 
 ## Sync readme for extension
