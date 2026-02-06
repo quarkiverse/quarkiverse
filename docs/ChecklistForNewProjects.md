@@ -62,6 +62,6 @@ In order to have your [extension documentation](https://github.com/quarkiverse/q
 
 # When your extension is ready
 
-## [Release your extension](/release) 
+## Release your extension
 
 When all tests pass, and you're pretty confident that your extension is ready, it's time to [release your extension](/release) to Maven central
