@@ -4,19 +4,24 @@ on:
   pull_request_target:
     types: [closed]
 
+permissions:
+  pull-requests: write
+  packages: read
+
 jobs:
   preview-teardown:
     runs-on: ubuntu-latest
     steps:
       - name: Teardown surge preview
         id: deploy
-        run: npx surge teardown https://hub-quarkiverse-pr-${{ github.event.number }}-preview.surge.sh --token ${{ secrets.SURGE_TOKEN }} || true
+        run: npx surge teardown https://hub-quarkiverse-pr-${{ github.event.number }}-preview.surge.sh --token ${{ secrets.SURGE_TOKEN }} || echo "NOT_TORNDOWN=true" >> "$GITHUB_ENV"
       - name: Update PR status comment
-        uses: actions-cool/maintain-one-comment@v3.2.0
+        uses: quarkusio/action-helpers@main
+        if: env.NOT_TORNDOWN != 'true'
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          action: maintain-one-comment
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           body: |
             🙈 The PR is closed and the preview is expired.
-            <!-- Sticky Pull Request Comment -->
-          body-include: '<!-- Sticky Pull Request Comment -->'
-          number: ${{ github.event.number }}
+          body-marker: '<!-- Sticky Pull Request Comment -->'
+          pr-number: ${{ github.event.number }}
