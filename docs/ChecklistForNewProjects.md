@@ -6,11 +6,11 @@ Here is a checklist with the tasks to be performed on any new Quarkiverse extens
 
 The core team can then decide if the extension should belong to core or as a Quarkiverse extension. Please indicate the lead maintainers for the extension, and preferably a URL with more information about the technology the extension should enable. 
 
-Once the lead maintainers are identified (their GitHub accounts), a pull-request is created in the [Quarkiverse DevOps repository](https://github.com/quarkiverse/quarkiverse-devops) with the data provided in a [`.tf` file](https://github.com/quarkiverse/quarkiverse-devops#workflow-for-new-repositories) (because the pull-request needs to be created from a branch in the same repository, existing Quarkiverse members can do this without waiting for any Quarkiverse org owner).
+Once the lead maintainers are identified (their GitHub accounts), a pull-request is created in the [Quarkiverse DevOps repository](https://github.com/quarkiverse/quarkiverse-devops) with the data provided in a [`.tf` file](https://github.com/quarkiverse/quarkiverse-devops#workflow-for-new-repositories) (existing Quarkiverse members can do this without waiting for any Quarkiverse org owner).
 
 | :exclamation:  IMPORTANT   |
 |----------------------------|
-If you need to change any setting in the repository (give push permissions to anyone, enable a GitHub app, etc.), make sure you perform these changes in the repository's `.tf` file. Changes performed in the GitHub UI directly can be discarded at any time without notice.   
+If you need to change any setting in the repository (give push permissions to anyone, enable a GitHub app, etc.), make sure you perform these changes in the repository's `.tf` file. Changes performed in the GitHub UI directly can be discarded at any time without notice. The GitHub Provider syntax can be found [here](https://registry.terraform.io/providers/integrations/github/latest/docs). 
 
 # Start coding 
 
