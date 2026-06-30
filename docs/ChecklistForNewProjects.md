@@ -33,8 +33,9 @@ Extensions generated with the `create-extension` goal of the Quarkus maven plugi
 ## [Make your extension available in the tooling](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
 
 Most Quarkus extensions are listed in the [Quarkus community extension registry](https://quarkus.io/guides/extension-registry-user#registry.quarkus.io).
-Once extensions are included in the registry, they will automatically be available on [code.quarkus.io](https://code.quarkus.io), [extensions.quarkus.io](https://extensions.quarkus.io), and in the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). 
+Once extensions are included in the registry, they will be available on [code.quarkus.io](https://code.quarkus.io), [extensions.quarkus.io](https://extensions.quarkus.io), and in the Quarkus command line tools (such as `mvn quarkus:list-extensions`, `gradle listExtensions`). 
 
+A PR adding your extension to the catalog should be automatically created shortly after your first release. If it does not, you should add your extension manually.
 The community registry reads its contents from [quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). To add your extension to catalog, create a `YAML` file with your extension's `group-id` and `artifact-id` in the [extensions directory of the quarkus-extension-catalog repository](https://github.com/quarkusio/quarkus-extension-catalog/tree/main/extensions). 
 
 ## [Allow your company to be named as a maintainer or contributor (optional)](https://github.com/quarkusio/quarkus-extension-catalog#extensions)
