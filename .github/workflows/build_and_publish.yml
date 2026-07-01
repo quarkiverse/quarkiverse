@@ -53,7 +53,7 @@ jobs:
       - name: Store PR id
         run: echo ${{ github.event.number }} > ./public/pr-id.txt
       - name: Publishing directory for PR preview
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: site
           path: ./site/public
@@ -72,7 +72,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6 # not needed for the code, but needed for the git config
       - name: Download Built site
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           name: site
           path: _site
@@ -81,7 +81,7 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v5
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -102,7 +102,7 @@ jobs:
           node-version: '18'
       - run: npm ci --prefer-offline
       - name: Download Built Artifact
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           path: ./site/public/
           name: site
