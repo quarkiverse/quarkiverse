@@ -115,4 +115,4 @@ jobs:
         if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
         with:
           script: site/site-validation/dead-link-issue.java
-          scriptargs: token=${{ secrets.GITHUB_TOKEN }} issueRepo=${{ github.repository }}  runId=${{ github.run_id }} siteUrl=https://hub.quarkus.io/
+          scriptargs: token=${{ secrets.GITHUB_TOKEN }} issueRepo=${{ github.repository }}  runId=${{ github.run_id }} siteUrl=https://hub.quarkiverse.io/
