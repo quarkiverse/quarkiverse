@@ -31,8 +31,7 @@ describe("site links", () => {
     })
 
     // This should almost always be empty, except for the blanket exclude of non-internal links; we would not want to allow-list dead internal links
-    const linksToSkip = [`^(?!${config.siteUrl})`, `^(?!http://localhost:9000)`]
-
+    const linksToSkip = [`^(?!(${config.siteMetadata.siteUrl}|http://localhost:9000))`]
     // Go ahead and start the scan! As events occur, we will see them above.
     return await checker.check({
       path,
