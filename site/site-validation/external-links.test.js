@@ -82,7 +82,7 @@ describe("site external links", () => {
             linksToSkip,
             urlRewriteExpressions: [
                 {
-                    pattern: config.siteUrl,
+                    pattern:config.siteMetadata.siteUrl,
                     replacement: "http://localhost:9000",
                 },
             ],
