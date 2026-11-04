@@ -9,6 +9,15 @@ updates:
     directory: "site" # Location of package manifests
     schedule:
       interval: "daily"
+    cooldown:
+      default-days: 7
+  - package-ecosystem: maven
+    directory: "site"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 20
+    cooldown:
+      default-days: 7
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -20,3 +29,5 @@ updates:
           - "*-artifact"
     labels:
       - website
+    cooldown:
+      default-days: 14
