@@ -18,7 +18,7 @@ const Navigation = () => {
 `)
     return (
         <ul>
-            {data.allMarkdownRemark.edges.map((edge, i) => edge.node.fields.slug.startsWith("_") || (
+            {data.allMarkdownRemark.edges.map((edge, i) => edge.node.fields.slug.startsWith("_") || edge.node.fields.slug === "home" || (
                 <li key={i}><Link to={"/" + edge.node.fields.slug}>{edge.node.fields.title}</Link></li>)
             )}
         </ul>
