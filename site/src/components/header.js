@@ -75,7 +75,6 @@ const Header = ({siteTitle, pageName}) => (
                     Edit this Page
                 </PaddedAnchor>}
         </div>
-        <Script defer src="/static/fontawesome/fontawesome-all.js"/>
     </header>
 )
 
