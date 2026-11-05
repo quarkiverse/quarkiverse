@@ -1,0 +1,10 @@
+{! Converted from site/src/components/navigation.js by the migration to Roq !}
+<ul>
+  {#for edge in site.pages}
+    {#if edge.source.markup == 'markdown'}
+      {#if ! (edge.baseFileName.slugify(true).startsWith('_') || (edge.baseFileName.slugify(true) == 'home'))}
+        <li><a href="{=edge.url}">{=edge.data.title ?: edge.baseFileName.replace('-', ' ')}</a></li>
+      {/if}
+    {/if}
+  {/for}
+</ul>

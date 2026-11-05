@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {#seo page site /}
+  {#favicon site /}
+  <link rel="manifest" href="{=site.url('manifest.webmanifest')}">
+  {#bundle /}
+</head>
+<body>
+  {! Converted from site/src/components/layout.js by the migration to Roq; parameters: pageName !}
+  {#include partials/header siteTitle=(site.title ?: 'Title') pageName=page.data.pageName?? /}
+  <div style="margin: 0 auto; max-width: var(--size-content); padding: var(--size-gutter); display: flex; flex-direction: row; column-gap: 40px">
+    {#include partials/navigation /}
+    <main>{#insert /}</main>
+  </div>
+  {#include partials/footer /}
+</body>
+</html>

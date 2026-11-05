@@ -1,0 +1,24 @@
+/* How gatsby-plugin-image lays out images */
+.gatsby-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.gatsby-image-wrapper img {
+  bottom: 0;
+  height: 100%;
+  left: 0;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  object-fit: cover;
+}
+
+.gatsby-image-wrapper-constrained {
+  display: inline-block;
+  vertical-align: top;
+}
