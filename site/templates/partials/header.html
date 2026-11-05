@@ -1,4 +1,3 @@
-{! Converted from site/src/components/header.js by the migration to Roq; parameters: siteTitle, pageName !}
 <header style="margin: 0 auto; padding: var(--space-4) var(--size-gutter); display: flex; align-items: center; justify-content: space-between">
   <div style="display: flex; align-items: center; justify-content: start; column-gap: 40px">
     <a href="https://www.quarkiverse.io/" class="header-logo"><div data-gatsby-image-wrapper class="gatsby-image-wrapper gatsby-image-wrapper-constrained logo" style="background-color: white"><div style="max-width: 36px; display: block"><img alt="" role="presentation" aria-hidden="true" src="data:image/svg+xml;charset=utf-8,%3Csvg%20height='36'%20width='36'%20xmlns='http://www.w3.org/2000/svg'%20version='1.1'%3E%3C/svg%3E" style="max-width: 100%; display: block; position: static"></div><img src="{=site.url('images/quarkiverse-logo.png')}" alt="Quarkiverse logo" style="object-fit: cover; background-color: white" decoding="async" loading="lazy"></div></a>
@@ -6,5 +5,5 @@
       <h1>{=siteTitle??}</h1>
     </a>
   </div>
-  <div>{#if pageName??}<a href="https://github.com/quarkiverse/quarkiverse/edit/main/docs/{=pageName??}.md" target="_blank" class="header-padded-anchor"><i class="fa-solid fa-pencil header-padded-icon" aria-hidden="true"></i>Edit this Page</a>{/if}</div>
+  <div>{#if page.baseFileName??}<a href="https://github.com/quarkiverse/quarkiverse/edit/main/docs/{=page.baseFileName??}.md" target="_blank" class="header-padded-anchor"><i class="fa-solid fa-pencil header-padded-icon" aria-hidden="true"></i>Edit this Page</a>{/if}</div>
 </header>
