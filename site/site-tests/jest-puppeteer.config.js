@@ -1,7 +1,7 @@
 // Load a token from `.env` when testing locally.
 // This is not used when running in CI.
 // See below for the ".env" contents.
-require("dotenv").config()
+require("dotenv").config({quiet: true})
 
 module.exports = {
   server: {
@@ -19,6 +19,8 @@ module.exports = {
     debug: true,
   },
   launch: {
+    // GitHub's runners block the unprivileged user namespaces Chrome's sandbox needs; the runner is disposable anyway
+    args: process.env.CI ? ["--no-sandbox", "--disable-setuid-sandbox"] : [],
     defaultViewport: {
       width: 1920,
       height: 1080,

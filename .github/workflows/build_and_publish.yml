@@ -1,4 +1,4 @@
-name: Gatsby Publish
+name: Build and Publish
 
 on:
   push:
@@ -20,48 +20,46 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  unit-test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: '18'
-      - run: npm install
-      - run: npm run test
-        env:
-          CI: true
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+      - name: Set up JDK
+        uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+        with:
+          java-version: '25'
+          distribution: 'temurin'
+          cache: 'maven'
       - uses: actions/setup-node@v6
         with:
-          node-version: '18'
-      - run: npm install
-      - run: npm run build
-        env:
-          NODE_ENV: production
-          GATSBY_ACTIVE_ENV: production
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PREFIX_PATHS: true
-      - name: Disable AppArmor // Needed on ubunti 23+, see https://chromium.googlesource.com/chromium/src/+/main/docs/security/apparmor-userns-restrictions.md
-        run: echo 0 | sudo tee /proc/sys/kernel/apparmor_restrict_unprivileged_userns
-      - run: npm run test:int
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: site/site-tests/package-lock.json
+      - name: Build with Maven
+        run: |
+          export QUARKUS_ROQ_GENERATOR_BATCH=true
+          mvn -B package quarkus:run -DskipTests
+      - name: Install site test dependencies
+        working-directory: site/site-tests
+        run: npm ci
+      # The tests start serve-roq.js themselves (see jest-puppeteer.config.js), so there is no server to start here
+      - name: Integration tests
+        working-directory: site/site-tests
+        run: npm run test:int
         env:
           CI: true
       - name: Store PR id
-        run: echo ${{ github.event.number }} > ./public/pr-id.txt
+        run: echo ${{ github.event.number }} > ./target/roq/pr-id.txt
       - name: Publishing directory for PR preview
         uses: actions/upload-artifact@v5
         with:
           name: site
-          path: ./site/public
+          path: ./site/target/roq
           retention-days: 3
   deploy:
     # Only try and deploy on merged code
     if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
-    needs: [ unit-test, build ]
+    needs: [ build ]
     permissions:
       pages: write      # to deploy to Pages
       id-token: write   # to verify the deployment originates from an appropriate source
@@ -99,14 +97,19 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
         with:
-          node-version: '18'
-      - run: npm ci --prefer-offline
+          node-version: '20'
+          cache: npm
+          cache-dependency-path: site/site-tests/package-lock.json
       - name: Download Built Artifact
         uses: actions/download-artifact@v6
         with:
-          path: ./site/public/
+          path: ./site/target/roq/
           name: site
+      - name: Install site test dependencies
+        working-directory: site/site-tests
+        run: npm ci --prefer-offline
       - run: npm run test:links
+        working-directory: site/site-tests
         continue-on-error: true # problems will be tracked by defects raised by the next job, not by build failures
         env:
           CI: true
@@ -114,5 +117,5 @@ jobs:
         uses: jbangdev/jbang-action@v0.130.0
         if: "github.repository == 'quarkiverse/quarkiverse' && github.ref_name == 'main' && (github.event_name == 'push' || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch')"
         with:
-          script: site/site-validation/dead-link-issue.java
+          script: site/site-tests/site-validation/dead-link-issue.java
           scriptargs: token=${{ secrets.GITHUB_TOKEN }} issueRepo=${{ github.repository }}  runId=${{ github.run_id }} siteUrl=https://hub.quarkiverse.io/
