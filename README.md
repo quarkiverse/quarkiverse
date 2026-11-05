@@ -13,20 +13,25 @@ Looking to onboard an extension? Here's the [quick link](https://github.com/quar
 
 ## Updating the docs 
 
-The content for the Quarkiverse Hub site lives in [the docs folder](https://github.com/quarkiverse/quarkiverse/tree/main/docs). 
-It is [mirrored](https://github.com/quarkiverse/quarkiverse/blob/main/.github/workflows/wikisync.yml) to [the GitHub wiki](https://github.com/quarkiverse/quarkiverse/wiki), and also [published externally](https://hub.quarkiverse.io) as a Gatsby site. This allows the content to be indexed by search engines, and also enables richer formatting and styling.
+The content for the Quarkiverse Hub site lives in [the site/content folder](https://github.com/quarkiverse/quarkiverse/tree/main/site/content). 
+It is [mirrored](https://github.com/quarkiverse/quarkiverse/blob/main/.github/workflows/wikisync.yml) to [the GitHub wiki](https://github.com/quarkiverse/quarkiverse/wiki), and also [published externally](https://hub.quarkiverse.io) as a [Roq](https://github.com/quarkiverse/quarkus-roq) site. This allows the content to be indexed by search engines, and also enables richer formatting and styling.
 
 ### Run project locally
 
-To stand up the Gatsby site locally, work in the `site` directory. First, install the required dependencies:
+To stand up the Roq site locally, work in the `site` directory. You need a JDK (21 or later) and Maven. To start development:
 
 ```
-npm install
+mvn quarkus:dev
 ```
 
-Then, to start development:
+Roq will start a live-reloading development environment at [localhost:8080](http://localhost:8080).
+
+To generate the static site, as the build does, into `site/target/roq`:
 
 ```
-npm run develop
+QUARKUS_ROQ_GENERATOR_BATCH=true mvn package quarkus:run -DskipTests
 ```
-Gatsby will start a hot-reloading development environment at [localhost:8000](http://localhost:8000)
+
+### Tests
+
+The site is checked with browser-based link and page tests, which need Node.js. See [site-tests/README.md](site/site-tests/README.md) for how to run them.

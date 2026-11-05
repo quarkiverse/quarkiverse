@@ -5,5 +5,5 @@
       <h1>{=siteTitle??}</h1>
     </a>
   </div>
-  <div>{#if page.baseFileName??}<a href="https://github.com/quarkiverse/quarkiverse/edit/main/docs/{=page.baseFileName??}.md" target="_blank" class="header-padded-anchor"><i class="fa-solid fa-pencil header-padded-icon" aria-hidden="true"></i>Edit this Page</a>{/if}</div>
+  <div>{#let editName=(pageName ?: page.baseFileName)}{#if pageName?? || page.source.markup == 'markdown'}<a href="https://github.com/quarkiverse/quarkiverse/edit/main/site/content/{=editName}.md" target="_blank" class="header-padded-anchor"><i class="fa-solid fa-pencil header-padded-icon" aria-hidden="true"></i>Edit this Page</a>{/if}{/let}</div>
 </header>

@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths:
-      - "docs/**"
+      - "site/content/**"
   repository_dispatch:
     types: [docs]
   gollum:
@@ -25,7 +25,7 @@ jobs:
           - name: Sync docs to wiki
             uses: newrelic/wiki-sync-action@v1.0.1
             with:
-              source: docs
+              source: site/content
               destination: wiki
               token: ${{ secrets.WIKI_PAT }}
               gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
@@ -44,7 +44,7 @@ jobs:
               uses: newrelic/wiki-sync-action@v1.0.1
               with:
                 source: wiki
-                destination: docs
+                destination: site/content
                 token: ${{ secrets.WIKI_PAT }}
                 gitAuthorName: ${{ env.GIT_AUTHOR_NAME }}
                 gitAuthorEmail: ${{ env.GIT_AUTHOR_EMAIL }}

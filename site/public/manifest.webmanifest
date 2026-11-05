@@ -1,0 +1,17 @@
+{
+  "id": "quarkiverse-hub",
+  "name": "Quarkiverse Hub",
+  "short_name": "Quarkiverse",
+  "description": "The Quarkiverse Hub provides support for Quarkus extension projects contributed by the community.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "minimal-ui",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/images/quarkiverse-logo.png",
+      "sizes": "200x200",
+      "type": "image/png"
+    }
+  ]
+}

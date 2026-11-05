@@ -2,7 +2,7 @@ name: Surge PR Preview
 
 on:
   workflow_run:
-    workflows: [ "Gatsby Publish" ]
+    workflows: [ "Build and Publish" ]
     types:
       - completed
     branches-ignore:
