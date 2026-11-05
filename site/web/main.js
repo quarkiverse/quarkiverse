@@ -1,0 +1,12 @@
+import './_normalize.css';
+import './_style.css';
+import 'prismjs/themes/prism.css';
+import '@fontsource/open-sans';
+import '@fontsource/open-sans/300.css';
+import '@fontsource/open-sans/400.css';
+import '@fontsource/open-sans/600.css';
+import '@fontsource/open-sans/700.css';
+import './_layout.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import './_components.css';
+import './_gatsby-image.css';
