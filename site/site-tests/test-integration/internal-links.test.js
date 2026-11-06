@@ -2,8 +2,7 @@ jest.setTimeout(10 * 60 * 1000)
 
 const link = require("linkinator")
 
-const config = require("../gatsby-config.js")
-const { port } = require("../jest-puppeteer.config").server
+const {siteUrl, port} = require("../site.config")
 const pathPrefix = process.env.PATH_PREFIX || ""
 
 describe("site links", () => {
@@ -31,7 +30,7 @@ describe("site links", () => {
     })
 
     // This should almost always be empty, except for the blanket exclude of non-internal links; we would not want to allow-list dead internal links
-    const linksToSkip = [`^(?!(${config.siteMetadata.siteUrl}|http://localhost:9000))`]
+    const linksToSkip = [`^(?!(${siteUrl}|http://localhost:${port}))`]
     // Go ahead and start the scan! As events occur, we will see them above.
     return await checker.check({
       path,
@@ -39,8 +38,8 @@ describe("site links", () => {
       linksToSkip,
       urlRewriteExpressions: [
         {
-          pattern:config.siteMetadata.siteUrl,
-          replacement: "http://localhost:9000",
+          pattern:siteUrl,
+          replacement: `http://localhost:${port}`,
         },
       ],
       concurrency: 50,

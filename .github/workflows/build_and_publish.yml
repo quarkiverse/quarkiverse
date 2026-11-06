@@ -35,6 +35,8 @@ jobs:
           node-version: '20'
           cache: npm
           cache-dependency-path: site/site-tests/package-lock.json
+      - name: Unit tests
+        run: mvn -B test
       - name: Build with Maven
         run: |
           export QUARKUS_ROQ_GENERATOR_BATCH=true
@@ -42,7 +44,7 @@ jobs:
       - name: Install site test dependencies
         working-directory: site/site-tests
         run: npm ci
-      # The tests start serve-roq.js themselves (see jest-puppeteer.config.js), so there is no server to start here
+      # The tests start serve-roq.js themselves (see jest.config.js), so there is no server to start here
       - name: Integration tests
         working-directory: site/site-tests
         run: npm run test:int

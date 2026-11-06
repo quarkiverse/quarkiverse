@@ -5,8 +5,7 @@ const status = require("http-status")
 const {curly} = require("node-libcurl")
 const promiseRetry = require("promise-retry")
 const fs = require("fs/promises")
-const config = require("../gatsby-config.js")
-const {port} = require("../jest-puppeteer.config").server
+const {siteUrl, port} = require("../site.config")
 
 const pathPrefix = process.env.PATH_PREFIX || ""
 
@@ -82,8 +81,8 @@ describe("site external links", () => {
             linksToSkip,
             urlRewriteExpressions: [
                 {
-                    pattern:config.siteMetadata.siteUrl,
-                    replacement: "http://localhost:9000",
+                    pattern:siteUrl,
+                    replacement: `http://localhost:${port}`,
                 },
             ],
             concurrency: 5,
