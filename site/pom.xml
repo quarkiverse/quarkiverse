@@ -18,6 +18,7 @@
         <surefire-plugin.version>3.5.6</surefire-plugin.version>
         <quarkus-web-bundler.version>3.0.0</quarkus-web-bundler.version>
         <asciidoctorj-diagram.version>3.2.1</asciidoctorj-diagram.version>
+        <roq.version>2.2.0</roq.version>
     </properties>
 
     <dependencyManagement>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>io.quarkiverse.roq</groupId>
             <artifactId>quarkus-roq</artifactId>
-            <version>2.2.0</version>
+            <version>${roq.version}</version>
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
@@ -45,6 +46,18 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkiverse.roq</groupId>
+            <artifactId>quarkus-roq-testing</artifactId>
+            <version>${roq.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.21.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
