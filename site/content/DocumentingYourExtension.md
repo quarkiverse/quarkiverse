@@ -23,6 +23,33 @@ Consider adding documentation to the [Quarkiverse docs page](https://docs.quarki
 The Quarkiverse Hub uses [Antora](https://antora.org/) to aggregate each extension's documentation in the Quarkiverse docs website. 
 To register your extension's documentation, open a PR including it in the [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml)
 
+### Publish documentation from multiple branches
+
+To publish documentation for both the default branch and a maintenance branch, update your extension's entry in [antora-playbook.yml](https://github.com/quarkiverse/quarkiverse-docs/blob/main/antora-playbook.yml):
+
+```yaml
+- url: https://github.com/quarkiverse/quarkus-your-extension
+  branches: [HEAD, '0.8.x']
+  version:
+    main: dev
+  start_path: docs
+```
+
+In this example, `HEAD` selects the default branch, `main`. In your extension's repository, remove the `version` key from `docs/antora.yml` on every included branch to let the playbook assign `dev` to `main` and use the branch name for other branches, such as `0.8.x`.
+
+If you keep `version` in `docs/antora.yml`, set a different value on each branch because it [takes precedence over the playbook](https://docs.antora.org/antora/latest/playbook/content-source-version/). If two branches of the same extension use `version: dev`, Antora combines their docs into one component version and can fail if both branches provide the same navigation file.
+
+If your maintenance branches follow a naming convention, use an [Antora branch pattern](https://docs.antora.org/antora/latest/playbook/content-branches/) to include new branches automatically.
+For example, the following pattern includes branches such as `3.x` and `3.15.x`:
+
+```yaml
+branches: [HEAD, '{1..9}*({0..9})?(.+({0..9})).x']
+```
+
+To publish the documentation as it was at a specific release, add [Git tags](https://docs.antora.org/antora/latest/playbook/content-tags/) to the same playbook entry, for example `tags: ['0.8.2']`. Keep `branches` to publish from both, or set `branches: ~` to publish only from tags. Check that each selected tag has `docs/antora.yml` and resolves to a distinct Antora version, just like each selected branch.
+
+After the docs are published, check that the expected versions appear in the version selector.
+
 ## Quarkus Antora for "live edit"
 
 To generate locally the documentation of an extension as a site, you can add the quarkus-antora extension: https://github.com/quarkiverse/quarkus-antora to your project using the following steps: 
