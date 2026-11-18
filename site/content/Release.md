@@ -22,6 +22,12 @@ Once the pull-request is merged, the Release workflow is triggered, which will p
 
 After the release is performed, [create a GitHub release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release), so projects using your extension may know what have been changed when dependabot kicks in.
 
+### Perform a maintenance release
+
+To release from a maintenance branch such as `0.8.x`, create a branch from `0.8.x` in the origin repository and update `current-version` and `next-version` in its `.github/project.yml`. Open the pull request with `0.8.x` as the base branch instead of `main`. When the pull request is merged, the release workflow publishes from `0.8.x`.
+
+If you host your extension's documentation on the Quarkiverse docs site, you can also [publish documentation from multiple branches](../documentingyourextension/#publish-documentation-from-multiple-branches).
+
 ## FAQ
 
 ### Release fails while deploying the integration tests and docs
