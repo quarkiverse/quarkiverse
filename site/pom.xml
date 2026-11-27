@@ -18,7 +18,7 @@
         <surefire-plugin.version>3.5.6</surefire-plugin.version>
         <quarkus-web-bundler.version>3.0.0</quarkus-web-bundler.version>
         <asciidoctorj-diagram.version>3.2.1</asciidoctorj-diagram.version>
-        <roq.version>2.2.0</roq.version>
+        <roq.version>2.2.1</roq.version>
     </properties>
 
     <repositories>
